@@ -6,8 +6,10 @@ const session      = require("express-session");
 const mongoose     = require("mongoose");
 const defaultRoute = require("./routes/default");
 const passport     = require("passport");
+const helper       = require("./method/helper")
 
-app.use(express.static(path.join(__dirname,"src")));
+app.disable("x-powered-by");
+app.use(express.static(path.join(__dirname,"app")));
 app.set("view engine","ejs");
 app.set("views",path.join(__dirname,"views"));
 app.use(bodyParser.urlencoded({extended:true}));
@@ -19,6 +21,7 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(helper);
 // app.use(passport.serializeUser(function(user,done){
 //   done(null,user);
 // }))

@@ -7,7 +7,10 @@ function addUser(user){
   })
 
   return new Promise((res,rej)=>{
-    new_user.save().then(user => res(user)).catch(err => rej(err))
+    new_user.save().then(user => {
+      return res(user)
+    }).catch(err => rej(err))
+    
   })
 } 
 
