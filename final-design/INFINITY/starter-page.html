@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<!--
+   This is a starter template page. Use this page to start your new project from
+   scratch. This page gets rid of all links and provides the needed markup only.
+   -->
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../plugins/images/favicon.png">
+    <title>Infinity Cars Insurance - Dashboard</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../plugins/bower_components/bootstrap-extension/css/bootstrap-extension.css" rel="stylesheet">
+    <!-- This is Sidebar menu CSS -->
+    <!-- <link href="../plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css" rel="stylesheet"> -->
+    <!-- This is a Animation CSS -->
+    <link href="css/animate.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/colors/blue.css" id="theme" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="cssload-speeding-wheel"></div>
+    </div>
+    <div id="wrapper">
+        <!-- Top Navigation -->
+        <nav class="navbar navbar-default navbar-static-top m-b-0">
+            <div class="navbar-header">
+                
+                <!-- Toggle icon for mobile view -->
+                <a class="navbar-toggle hidden-sm hidden-md hidden-lg " href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse"><i class="ti-menu"></i>
+                </a>
+                <!-- Logo -->
+                
+                <div class="top-left-part">
+                    <a class="logo" href="starter-page.html">
+                        <!-- <b><img src="../plugins/images/admin-logo.png" alt="home" /></b> -->
+                        <!-- Logo text image you can use text also -->
+                        <!-- <span class="hidden-xs"><img src="../plugins/images/admin-text.png" alt="home" /></span> -->
+                        <h5 class="hidden-xs text-white m-l-10 m-t-20">Infinity Cars Insurance</h5>
+                    </a>
+                </div>
+                <!-- /Logo -->
+                <!--Toggle icon -->
+                <ul class="nav navbar-top-links navbar-left hidden-xs">
+                    <li><a href="javascript:void(0)" class="open-close hidden-xs waves-effect waves-light"><i class="icon-arrow-left-circle ti-menu"></i></a></li>
+                </ul>
+                <ul class="nav navbar-top-links navbar-left hidden-sm hidden-md hidden-lg">
+                    <li>
+                        <h4 class="text-uppercase text-bold text-white" style="position:relative;top:12px;font-size:16px;font-weight:500;">Infinity Cars Insurance</h4>
+                    </li>
+                </ul>
+                
+                <ul class="nav navbar-top-links navbar-right pull-right">
+                    <!-- .user dropdown -->
+                    
+                    <li class="dropdown">
+                        <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"> <img src="../plugins/images/users/varun.jpg" alt="user-img" width="36" class="img-circle"><b class="hidden-xs">Pavan</b> </a>
+                        <ul class="dropdown-menu dropdown-user animated flipInY">
+                            <li><a href="#"><i class="ti-user"></i> My Profile</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#"><i class="fa fa-power-off"></i> Logout</a></li>
+                        </ul>
+                        <!-- /.user dropdown-user -->
+                    </li>
+                    <!-- /.user dropdown -->
+                    <li class="right-side-toggle"> <a class="waves-effect waves-light" href="javascript:void(0)"><i class="ti-settings"></i></a></li>
+                    <!-- /.dropdown -->
+                </ul>
+            </div>
+            <!-- /.navbar-header -->
+            <!-- /.navbar-top-links -->
+            <!-- /.navbar-static-side -->
+        </nav>
+        <!-- End Top Navigation -->
+        <!-- Left navbar-header -->
+        <div class="navbar-default sidebar" role="navigation">
+            <div class="sidebar-nav navbar-collapse">
+                <ul class="nav" id="side-menu">
+                    <li>
+                        <a href="#" class="waves-effect active">
+                            <i class="linea-icon linea-basic fa-fw" data-icon="v"></i>
+                            <span class="hide-menu"> Dashboard
+                                <span class="fa arrow"></span>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="add-details.html" class="waves-effect">
+                            <i class="linea-icon linea-basic fa-fw" data-icon="v"></i>
+                            <span class="hide-menu"> Add Details
+                                <span class="fa arrow"></span>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="create-policy.html" class="waves-effect">
+                            <i class="linea-icon linea-basic fa-fw" data-icon="v"></i>
+                            <span class="hide-menu"> Create Policy
+                                <span class="fa arrow"></span>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="list-policies.html" class="waves-effect">
+                            <i class="linea-icon linea-basic fa-fw" data-icon="v"></i>
+                            <span class="hide-menu"> Show all Policies
+                                <span class="fa arrow"></span>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Left navbar-header end -->
+        <!-- Page Content -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row bg-title">
+                    <!-- .page title -->
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                        <h4 class="page-title">Version - 1 . 0 . 1</h4> 
+                    </div>
+                    <!-- /.page title -->
+                    <!-- .breadcrumb -->
+                    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                        <a href="create-policy.html" target="_blank" class="btn btn-danger pull-right m-l-20 btn-rounded btn-outline hidden-xs hidden-sm waves-effect waves-light">Create Policy + </a>
+                        <ol class="breadcrumb">
+                            <li class="active">Dashboard</li>
+                        </ol>
+                    </div>
+                    <!-- /.breadcrumb -->
+                </div>
+                <!-- .row -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="white-box">
+                            <div class="row">
+                                
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div id="morris-area-chart" style="height:350px;"></div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <!-- .row -->
+                 <!-- /.row -->
+                <!-- .row -->
+                <div class="row">
+                    <div class="col-lg-12 col-sm-12 col-xs-12">
+                        <div class="row">
+                            <div class="col-lg-3 col-sm-6 col-xs-12">
+                                <div class="white-box">
+                                    <h3 class="box-title">TOTAL CLIENTS</h3>
+                                    <ul class="list-inline two-part">
+                                        <li><i class="icon-people text-info"></i></li>
+                                        <li class="text-right"><span class="counter">23</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-sm-6 col-xs-12">
+                                <div class="white-box">
+                                    <h3 class="box-title">CURRENT MONTH POLICIES</h3>
+                                    <ul class="list-inline two-part">
+                                        <li><i class="icon-folder text-purple"></i></li>
+                                        <li class="text-right"><span class="counter">169</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-sm-6 col-xs-12">
+                                <div class="white-box">
+                                    <h3 class="box-title">TOTAL POLICIES</h3>
+                                    <ul class="list-inline two-part">
+                                        <li><i class="icon-folder-alt text-danger"></i></li>
+                                        <li class="text-right"><span class="counter">286</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-sm-6 col-xs-12">
+                                <div class="white-box">
+                                    <h3 class="box-title">PREVIOUS MONTH POLICIES</h3>
+                                    <ul class="list-inline two-part">
+                                        <li><i class="ti-wallet text-success"></i></li>
+                                        <li class="text-right"><span class="counter">117</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+                <!-- .row -->
+                <div class="row">
+                    <div class="col-md-6 col-lg-9 col-xs-12">
+                        <div class="white-box">
+                            <h3 class="box-title">Policy Status</h3>
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Policy No.</th>
+                                            <th>Policy User</th>
+                                            <th>Policy date</th>
+                                            <th>Vehicle Details</th>
+                                            <th class="text-center">Action</th>
+                                            
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <a href="javascript:void(0)" class="btn-link"> Policy #53431</a>
+                                            </td>
+                                            <td>Steve N. Horton</td>
+                                            <td>
+                                                <span class="text-muted">
+                                                    <i class="fa fa-clock-o"></i> Jan 22, 2018</span>
+                                            </td>
+                                            <td>Maruti Swift AMT ZDI</td>
+                                            <td class="text-center">
+                                                <div class="label label-table label-info">View</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <a href="javascript:void(0)" class="btn-link"> Policy #53432</a>
+                                            </td>
+                                            <td>Charles S Boyle</td>
+                                            <td>
+                                                <span class="text-muted">
+                                                    <i class="fa fa-clock-o"></i> Jan 24, 2018</span>
+                                            </td>
+                                            <td>Maruti Swift VDI</td>
+                                            <td class="text-center">
+                                                <div class="label label-table label-info">VIEW</div>
+                                            </td>                                            
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <a href="javascript:void(0)" class="btn-link"> Policy #53433</a>
+                                            </td>
+                                            <td>Lucy Doe</td>
+                                            <td>
+                                                <span class="text-muted">
+                                                    <i class="fa fa-clock-o"></i> Jan 24, 2018</span>
+                                            </td>
+                                            <td>Maruti Swift VXI</td>
+                                            <td class="text-center">
+                                                <div class="label label-table label-info">VIEW</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <a href="javascript:void(0)" class="btn-link"> Policy #53434</a>
+                                            </td>
+                                            <td>Teresa L. Doe</td>
+                                            <td>
+                                                <span class="text-muted">
+                                                    <i class="fa fa-clock-o"></i> Jan 15, 2018</span>
+                                            </td>
+                                            <td>Maruti Swift ZDI</td>
+                                            <td class="text-center">
+                                                <div class="label label-table label-info">VIEW</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <a href="javascript:void(0)" class="btn-link">Policy #53437</a>
+                                            </td>
+                                            <td>Charles S Boyle</td>
+                                            <td>
+                                                <span class="text-muted">
+                                                    <i class="fa fa-clock-o"></i> Jan 17, 2018</span>
+                                            </td>
+                                            <td>Maruti Swift LDI</td>
+                                            <td class="text-center">
+                                                <div class="label label-table label-info">VIEW</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <a href="javascript:void(0)" class="btn-link">Policy #536584</a>
+                                            </td>
+                                            <td>Scott S. Calabrese</td>
+                                            <td>
+                                                <span class="text-muted">
+                                                    <i class="fa fa-clock-o"></i> Jan 19, 2018</span>
+                                            </td>
+                                            <td>Maruti Swift LXI</td>
+                                            <td class="text-center">
+                                                <div class="label label-table label-info">VIEW</div>
+                                            </td>
+                                        </tr><tr>
+                                            <td>
+                                                <a href="javascript:void(0)" class="btn-link"> Policy #53432</a>
+                                            </td>
+                                            <td>Charles S Boyle</td>
+                                            <td>
+                                                <span class="text-muted">
+                                                    <i class="fa fa-clock-o"></i> Jan 24, 2018</span>
+                                            </td>
+                                            <td>Maruti Swift VDI</td>
+                                            <td class="text-center">
+                                                <div class="label label-table label-info">VIEW</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <a href="javascript:void(0)" class="btn-link"> Policy #53433</a>
+                                            </td>
+                                            <td>Lucy Doe</td>
+                                            <td>
+                                                <span class="text-muted">
+                                                    <i class="fa fa-clock-o"></i> Jan 24, 2018</span>
+                                            </td>
+                                            <td>Maruti Swift VXI</td>
+                                            <td class="text-center">
+                                                <div class="label label-table label-info">VIEW</div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 col-sm-6 col-xs-12">
+                        <div class="row">                            
+                            <div class="col-md-12">
+                                <div class="white-box bg-theme  ">
+                                    <h3 class="box-title text-white">POLICIES TO EXPIRE</h3>
+                                    <ul class="list-inline two-part">
+                                        <li>
+                                            <i class="ti-files text-white"></i>
+                                        </li>
+                                        <li class="text-right text-white">
+                                            <span class="counter">286</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="white-box bg-info ">
+                                    <h3 class="box-title text-white">EXPIRED POLICIES</h3>
+                                    <ul class="list-inline two-part">
+                                        <li>
+                                            <i class="ti-files text-white"></i>
+                                        </li>
+                                        <li class="text-right text-white">
+                                            <span class="counter">117</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="white-box">
+                                    <h3 class="box-title">Total Sites Visit</h3>
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-6 col-xs-6  m-t-30">
+                                            <h1 class="text-warning">$678</h1>
+                                            <p class="text-muted">APRIL 2018</p>
+                                            <b>(150 Sales)</b>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-xs-6">
+                                            <div id="sales1" class="text-center"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+                <!-- .right-sidebar -->
+                <div class="right-sidebar">
+                    <div class="slimscrollright">
+                        <div class="rpanel-title"> Service Panel <span><i class="ti-close right-side-toggle"></i></span> </div>
+                        <div class="r-panel-body">
+                        </div>
+                    </div>
+                </div>
+                <!-- /.right-sidebar -->
+            </div>
+            <!-- /.container-fluid -->
+            <footer class="footer text-center">2018 &copy; Infinity Cars Insurance Admin.</footer>
+        </div>
+        <!-- /#page-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+    <!-- jQuery -->
+    <script src="../plugins/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="bootstrap/dist/js/tether.min.js"></script>
+    <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- <script src="../plugins/bower_components/bootstrap-extension/js/bootstrap-extension.min.js"></script> -->
+    <!-- Sidebar menu plugin JavaScript -->
+    <!-- <script src="../plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js"></script> -->
+    <!--Slimscroll JavaScript For custom scroll-->
+    <script src="js/jquery.slimscroll.js"></script>
+    <!--Wave Effects -->
+    <script src="js/waves.js"></script>
+    <!--Counter js -->
+    <script src="../plugins/bower_components/waypoints/lib/jquery.waypoints.js"></script>
+    <script src="../plugins/bower_components/counterup/jquery.counterup.min.js"></script>
+    <!--Morris JavaScript -->
+    <script src="../plugins/bower_components/raphael/raphael-min.js"></script>
+    <script src="../plugins/bower_components/morrisjs/morris.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="js/custom.min.js"></script>
+    <script src="js/dashboard4.js"></script>
+    
+</body>
+
+</html>
