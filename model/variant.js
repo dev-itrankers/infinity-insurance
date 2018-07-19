@@ -5,7 +5,8 @@ var schema = new mongoose.Schema({
   name  : {
     type      : String,
     require   : true,
-    lowercase : true
+    lowercase : true,
+    unique    : true
   }
 },{
   versionKey : false

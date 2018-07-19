@@ -18,10 +18,10 @@ function getData(){
   return promise;
 }
 
-function sendAddon(data){
+function sendJsonData(url,type,data){
   var http = getXml();
-  var url = "/addon";
-  http.open("post",url,true);
+  // var url = "/addon";
+  http.open(type,url,true);
   http.setRequestHeader("Content-Type", "application/json");
   var promise = new Promise((res,rej)=>{
     http.onreadystatechange = function(){
@@ -37,4 +37,4 @@ function sendAddon(data){
   return promise;
 }
 
-export default { getData,sendAddon };
+export default { getData,sendJsonData };

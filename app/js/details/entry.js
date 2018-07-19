@@ -3,8 +3,8 @@ var service = require("./service");
 var events = require("./events");
 
 const make = [];
-let makeSelect    = document.querySelector("#make_drop");
-let modelSelect = document.querySelector("#model_drop");
+let makeSelect    = document.querySelector("#make-drop");
+let modelSelect = document.querySelector("#model-drop");
 service.default.getData().then(function(data){
   data.forEach(car => {
     var temp = {name:car.make};
@@ -19,15 +19,15 @@ service.default.getData().then(function(data){
 });
 
 function fillMake(){
-  let options = "";
+  let options = "<option value=\"0\">Select Make</option>";
   make.forEach(data => {
     options+= `<option value="${data.name.toLowerCase()}">${data.name.toUpperCase()}</option>`;
   });
-  makeSelect.innerHTML += options;
+  makeSelect.innerHTML = options;
 }
 
 function fillModel(){
-  let options = "";
+  let options = "<option value=\"0\">Select Model</option>";
   make.forEach(data => {
     options += `<optgroup label="${data.name.toUpperCase()}">`
     data.model.forEach(mod => {
@@ -35,6 +35,6 @@ function fillModel(){
     });
     options += `</optgroup>`
   });
-  modelSelect.innerHTML += options;
+  modelSelect.innerHTML = options;
 }
 }, false);

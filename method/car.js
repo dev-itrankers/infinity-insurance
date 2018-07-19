@@ -7,7 +7,7 @@ function validateCar(name){
 function validateModelVariant(name,id){
   var schema = joi.object().keys({
     name : joi.string().min(2).required(),
-    id   : joi.string().required()
+    id   : joi.string().min(2).required()
   })
   return joi.validate({name,id},schema);
 }

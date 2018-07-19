@@ -26,7 +26,7 @@ router.post("/",function(req,res){
         err.err_val = req.body.name;
         return response.send(res,500,"Internal server error",err)
       }
-      response.send(res,201,"Car "+req.body.name+" added")
+      response.send(res,201,"Make \""+req.body.name+"\" added")
     })
 });
 
@@ -34,31 +34,32 @@ router.get("/model/:id",function(req,res){
   
 });
 
-router.post("/model",function(req,res){
-  var result = method.validateModelVariant(req.body.name,req.body.carId);
-  if(result.error) return res.status(400).json({"message":"Invalid Data"});
-  var car = new modelModel({
+router.post("/model",function(req,resp){
+  var result = method.validateModelVariant(req.body.name,req.body.carmake);
+  if(result.error) return resp.status(400).json({"message":"Model name is required"});
+  var model = new modelModel({
     _id   : mongoose.Types.ObjectId(),
     name  : req.body.name
   })
-  var promise = new Promise((res,rej)=>{
-    car.save().then(car => res(car)).catch(err => rej(err))
+  const filter = {make:req.body.carmake};
+  var car;
+  carModel.findOne(filter,function(err,data){
+    if(err) return resp.status(500).json({"message":"Internal Server error"},err);
+    console.log(data);
+    if(!data || Object.keys(data).length == 0 )return response.send(resp,422,"\""+req.body.carmake+"\" make not found\nPlease reload page");
+    car = data;
   });
-  promise
-  .then(_ => {
-    const filter = {_id:new mongoose.Types.ObjectId(req.body.carId)};
-    carModel.findOne(filter,function(err,car){
-      if(err) return res.status(500).json({"message":"Internal Server error"})
-      console.log(car)
-      car.model.push(new mongoose.Types.ObjectId(_._id));
-      car.save().then((car)=>{
-        res.status(201).json({"message":"Model "+req.body.name+" added",car});
-      }).catch((err)=>{
-        return res.status(500).json({"message":"Internal Server error"});
-      });
-    })
-  })
-  .catch(_ => res.status(500).json({"message":"Internal Server Error"}))
+  model.save(function(err,model){
+    if(err){
+      err.err_val = req.body.name;
+      return response.send(resp,500,"Internal server error",err)
+    }
+    car.model.push(new mongoose.Types.ObjectId(model._id));
+    car.save(function(err,car){
+      if(err) return response.send(resp,500,"Internal Server error",err)
+      response.send(resp,201,"Model "+req.body.name+" added",null)
+    });
+  });
 });
 
 router.get("/variant/:id",function(req,res){
@@ -66,30 +67,30 @@ router.get("/variant/:id",function(req,res){
 });
 
 router.post("/variant",function(req,res){
-  var result = method.validateModelVariant(req.body.name,req.body.modelId);
-  if(result.error) return res.status(400).json({"message":"Invalid Data"});
+  var result = method.validateModelVariant(req.body.name,req.body.carmodel);
+  if(result.error) return  response.send(res,400,"Inavlid Data");
+  const filter = {name:req.body.carmodel};
+  var model;
+  modelModel.findOne(filter,function(err,data){
+    if(err) return resp.status(500).json({"message":"Internal Server error"},err);
+    if(!data || Object.keys(data).length == 0 )return response.send(res,422,"\""+req.body.carmodel+"\" model not found\nPlease reload page");
+    model = data;
+  });
   var variant = new variantModel({
     _id   : mongoose.Types.ObjectId(),
     name  : req.body.name
   })
-  var promise = new Promise((res,rej)=>{
-    variant.save().then(variant => res(variant)).catch(err => rej(err))
-  });
-  promise
-  .then(_ => {
-    const filter = {_id:new mongoose.Types.ObjectId(req.body.modelId)};
-    modelModel.findOne(filter,function(err,model){
-      if(err) return res.status(500).json({"message":"Internal Server error"})
-      console.log(model)
-      model.variant.push(new mongoose.Types.ObjectId(_._id));
-      model.save().then((model)=>{
-        res.status(201).json({"message":"Variant "+req.body.name+" added",model});
-      }).catch((err)=>{
-        return res.status(500).json({"message":"Internal Server error"});
-      });
+    variant.save(function(err,data){
+      if(err){
+        err.err_val = req.body.name;
+        return response.send(res,500,"Internal server error",err)
+      }
+      model.variant.push(new mongoose.Types.ObjectId(data._id));
+      model.save(function(err,data){
+        if(err) return response.send(res,500,"Internal Server error",err);
+        response.send(res,201,"Variant "+req.body.name+" added")
+      })
     })
-  })
-  .catch(_ => res.status(500).json({"message":"Internal Server Error"}))
 });
 
 module.exports = router;

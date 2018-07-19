@@ -5,7 +5,6 @@ const userMethod = require("../method/user");
 router.post("/signin", function (req, res) {
   const body = req.body;
   const pass_err_msg = {
-    // details : [{message:"Password Should contain atleast 1 capital and small letter, 1 number and 1 speacial case character"}]
     template : "should contain atleast 1 capital, 1 small letter, 1 number and 1 special case character"
   }
   const signSchema = joi.object().keys({

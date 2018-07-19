@@ -1,5 +1,5 @@
 function then(data,fallback_msg){
-  if(message=JSON.parse(data.trim()).message) window.swal(message,"success");
+  if(message=JSON.parse(data.trim()).message) window.swal("success",message,"success");
   else if(fallback_msg) window.swal(fallback_msg,"success");
   else window.swal("Job done successfully","success");
 }
