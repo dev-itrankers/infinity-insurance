@@ -19,7 +19,6 @@ router.post("/",function(req,res){
   })
   addon.save(function(err,user){
     if(err) {
-      console.log(err)
       err.err_val = req.body.name;
       return response.send(res,500,"Internal server added",err)
     }

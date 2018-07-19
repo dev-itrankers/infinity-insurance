@@ -52,7 +52,7 @@
                 <!-- Logo -->
 
                 <div class="top-left-part">
-                    <a class="logo" href="starter-page.html">
+                    <a class="logo" href="starter-page">
                         <!-- <b><img src="../plugins/images/admin-logo.png" alt="home" /></b> -->
                         <!-- Logo text image you can use text also -->
                         <!-- <span class="hidden-xs"><img src="../plugins/images/admin-text.png" alt="home" /></span> -->
@@ -114,7 +114,7 @@
             <div class="sidebar-nav navbar-collapse">
                 <ul class="nav" id="side-menu">
                     <li>
-                        <a href="starter-page.html" class="waves-effect">
+                        <a href="starter-page" class="waves-effect">
                             <i class="linea-icon linea-basic fa-fw" data-icon="v"></i>
                             <span class="hide-menu"> Dashboard
                                 <span class="fa arrow"></span>
@@ -130,7 +130,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="create-policy.html" class="waves-effect">
+                        <a href="create-policy" class="waves-effect">
                             <i class="linea-icon linea-basic fa-fw" data-icon="v"></i>
                             <span class="hide-menu"> Create Policy
                                 <span class="fa arrow"></span>
@@ -138,7 +138,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="list-policies.html" class="waves-effect">
+                        <a href="all-policies" class="waves-effect">
                             <i class="linea-icon linea-basic fa-fw" data-icon="v"></i>
                             <span class="hide-menu"> Show all Policies
                                 <span class="fa arrow"></span>
@@ -160,10 +160,10 @@
                     <!-- /.page title -->
                     <!-- .breadcrumb -->
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
-                        <a href="create-policy.html" target="_blank" class="btn btn-danger pull-right m-l-20 btn-rounded btn-outline hidden-xs hidden-sm waves-effect waves-light">Create Policy + </a>
+                        <a href="create-policy" target="_blank" class="btn btn-danger pull-right m-l-20 btn-rounded btn-outline hidden-xs hidden-sm waves-effect waves-light">Create Policy + </a>
                         <ol class="breadcrumb">
                             <li class="">
-                                <a href="starter-page.html">Dashboard</a>
+                                <a href="starter-page">Dashboard</a>
                             </li>
                             <li class="active">
                                 Add Details
@@ -183,19 +183,19 @@
                                 <div class="row">
                                 <div class="col-md-6">
                                     <div class="col-xs-12">
-                                        <input class="form-control" type="text" required="" placeholder="Enter Addon ">
+                                        <input id="addon-name" class="form-control" type="text" required="" placeholder="Enter Addon ">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="col-xs-12">
-                                        <input class="form-control" type="text" required="" placeholder="Enter Price ">
+                                        <input id="addon-price" class="form-control" type="text" required="" placeholder="Enter Price ">
                                     </div>
                                 </div>
                                 </div>
                             </div>
                             <div class="form-group text-center m-t-20">
                                 <div class="col-xs-12">
-                                    <button class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" type="submit" id="sa-success">Save </button>
+                                    <button class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" type="submit" id="addon-save">Save </button>
                                 </div>
                             </div>
                         </div>
@@ -229,10 +229,8 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-xs-12">
-                                    <select name="" id="" class="form-control">
+                                    <select name="" id="make_drop" class="form-control">
                                         <option value="0">Select Make</option>
-                                        <option value="1">Maruti</option>
-                                        <option value="2">Honda</option>
                                     </select>
                                 </div>
                             </div>
@@ -253,7 +251,7 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-xs-12">
-                                    <select name="" id="" class="form-control">
+                                    <select name="" id="model_drop" class="form-control">
                                         <option value="0">Select Model</option>
                                         <option value="1">Swift</option>
                                         <option value="2">City</option>
@@ -305,6 +303,8 @@
     <!-- Sweet-Alert  -->
     <script src="../plugins/bower_components/sweetalert/sweetalert.min.js"></script>
     <script src="../plugins/bower_components/sweetalert/jquery.sweet-alert.custom.js"></script>
+
+    <script src="/dist/details.js"></script>
 </body>
 
 </html>
