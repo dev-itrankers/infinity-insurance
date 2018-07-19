@@ -1,10 +1,11 @@
+document.addEventListener('DOMContentLoaded', ()=>{
 var service = require("./service");
-
 var events = require("./events");
+
 const make = [];
 let makeSelect    = document.querySelector("#make_drop");
 let modelSelect = document.querySelector("#model_drop");
-service.getData().then(function(data){
+service.default.getData().then(function(data){
   data.forEach(car => {
     var temp = {name:car.make};
     make.push(temp);
@@ -14,7 +15,7 @@ service.getData().then(function(data){
   fillMake();
   fillModel();
 }).catch(function(err){
-  console.log("Error : "+err);
+  window.swal("warning","Something went wrong\nPlease reload page!!","warning")
 });
 
 function fillMake(){
@@ -36,3 +37,4 @@ function fillModel(){
   });
   modelSelect.innerHTML += options;
 }
+}, false);

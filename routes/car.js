@@ -4,6 +4,7 @@ var carModel      = require("../model/car");
 var modelModel    = require("../model/model");
 var variantModel  = require("../model/variant");
 var mongoose      = require("mongoose");
+const response    = require("../method/response");
 router.get("/",function(req,res){
   var filter=req.query.name ? {make:req.query.name}:{}; 
   // var limit   = req.query.limit ? req.query.limit : 10;
@@ -20,12 +21,13 @@ router.post("/",function(req,res){
       _id   : mongoose.Types.ObjectId(),
       make  : req.body.name
     })
-    var promise = new Promise((res,rej)=>{
-      car.save().then(car => res(car)).catch(err => rej(err))
-    });
-    promise
-    .then(_ => res.status(201).json({"message":"Car "+req.body.name+" added"}))
-    .catch(_ => res.status(500).json({"message":"Internal Server Error"}))
+    car.save(function(err,car){
+      if(err){
+        err.err_val = req.body.name;
+        return response.send(res,500,"Internal server error",err)
+      }
+      response.send(res,201,"Car "+req.body.name+" added")
+    })
 });
 
 router.get("/model/:id",function(req,res){

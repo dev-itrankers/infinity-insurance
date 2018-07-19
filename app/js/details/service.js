@@ -18,5 +18,23 @@ function getData(){
   return promise;
 }
 
+function sendAddon(data){
+  var http = getXml();
+  var url = "/addon";
+  http.open("post",url,true);
+  http.setRequestHeader("Content-Type", "application/json");
+  var promise = new Promise((res,rej)=>{
+    http.onreadystatechange = function(){
+      if(http.readyState==4 && http.status==201){
+        res(http.response);
+      }
+      else if(http.readyState==4){
+        rej(http.response);
+      }
+    }
+  });
+  http.send(data);
+  return promise;
+}
 
-module.exports = {getData};
+export default { getData,sendAddon };

@@ -5,7 +5,7 @@ const car           = require("./car");
 const addon         = require("./addon")
 const views         = require("./views");
 router.get("/",function(req,res){
-  res.render("index");
+  res.redirect("/dashboard");
 });
 router.use("/car",car);
 router.use("/addon",addon);
