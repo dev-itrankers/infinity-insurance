@@ -1,7 +1,7 @@
 {
   "env":{
     "SECRET":"SECRET HERE",
-    "PORT":4000,
-    "DB_CONN":"mongodb://127.0.0.1:27017/practice"
+    "PORT":3000,
+    "DB_CONN":"mongodb://admin:infinity.18@ds245971.mlab.com:45971/infinity_insurance"
   }
 }

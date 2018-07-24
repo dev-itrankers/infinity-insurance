@@ -7,8 +7,8 @@ var schema = new mongoose.Schema({
     require   : true,
     lowercase : true,
     unique    : true
-  },
-  variant : [{
+  }
+  ,variant : [{
     type : mongoose.Schema.Types.ObjectId,
     ref : "variant"
   }]

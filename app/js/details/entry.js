@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', ()=>{
-var service = require("./service");
+var service = require("../service");
 var events = require("./events");
 
 const make = [];
@@ -37,4 +37,5 @@ function fillModel(){
   });
   modelSelect.innerHTML = options;
 }
+
 }, false);

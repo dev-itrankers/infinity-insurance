@@ -4,7 +4,8 @@ const validator   = require("../method/validate");
 const response    = require("../method/response");
 const mongoose    = require("mongoose");
 router.get("/",function(req,res){
-  addons.find().then((err,addons)=>{
+  addons.find().then((addons)=>{
+    // if(err) return res.status(500).json({message:"Internal Server Error"});
     res.status(200).json(addons);
   });
 });

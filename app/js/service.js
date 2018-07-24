@@ -1,4 +1,4 @@
-import {getXml} from "../ajax";
+import {getXml} from "./ajax";
 
 function getData(){
   var http = getXml();
@@ -20,12 +20,11 @@ function getData(){
 
 function sendJsonData(url,type,data){
   var http = getXml();
-  // var url = "/addon";
   http.open(type,url,true);
   http.setRequestHeader("Content-Type", "application/json");
   var promise = new Promise((res,rej)=>{
     http.onreadystatechange = function(){
-      if(http.readyState==4 && http.status==201){
+      if(http.readyState==4 && (http.status==201 || http.status==200)){
         res(http.response);
       }
       else if(http.readyState==4){

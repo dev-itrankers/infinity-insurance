@@ -10,6 +10,7 @@ const helper       = require("./method/helper")
 
 app.disable("x-powered-by");
 app.use(express.static(path.join(__dirname,"app")));
+app.use("/docs",express.static(path.join(__dirname,"docs")));
 app.set("view engine","ejs");
 app.set("views",path.join(__dirname,"views"));
 app.use(bodyParser.urlencoded({extended:true}));
@@ -22,6 +23,14 @@ app.use((req, res, next) => {
       }
       next();
   });
+});
+
+app.use(function(req,res,next){
+  var keys = Object.keys(req.body);
+  for(key of keys){
+    if(typeof req.body[key] == "string")  req.body[key] = (req.body[key]).trim();
+  }
+  next();
 });
 // app.use(bodyParser.json());
 app.use(session({
@@ -39,9 +48,13 @@ app.use(helper);
 //   done(null,user);
 // }));
 app.use(defaultRoute);
+var options = {
+  server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } },
+  replset: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } }
+};
+var db = mongoose.connect(process.env.DB_CONN);
 
-mongoose.connect(process.env.DB_CONN);
-
+mongoose.set("debug",true);
 app.listen(process.env.PORT,function(){
   console.log("Server started at port -> ",process.env.PORT);
 });

@@ -1,4 +1,4 @@
-import service from "./service";
+import service from "../service";
 var promiseHelper = require("../promise");
 
 document.querySelector("#addon-save").addEventListener("click",function(){
@@ -12,7 +12,7 @@ document.querySelector("#addon-save").addEventListener("click",function(){
     promiseHelper.then(data,"Data added successfully");
   }).catch(function(err){
     promiseHelper.error(err);
-  })
+  });
 });
 
 document.querySelector("#make-save").addEventListener("click",function(){

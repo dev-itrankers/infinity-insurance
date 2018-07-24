@@ -45,7 +45,6 @@ router.post("/model",function(req,resp){
   var car;
   carModel.findOne(filter,function(err,data){
     if(err) return resp.status(500).json({"message":"Internal Server error"},err);
-    console.log(data);
     if(!data || Object.keys(data).length == 0 )return response.send(resp,422,"\""+req.body.carmake+"\" make not found\nPlease reload page");
     car = data;
   });

@@ -1,7 +1,7 @@
 const path = require('path');
-const folder = "details";
+const folder = "policy";
 const entry = "entry";
-const op = "details.js";
+const op = "policy.js";
 module.exports = {
   "mode" : "development",
   "entry" :path.join(__dirname,"js",folder,entry),

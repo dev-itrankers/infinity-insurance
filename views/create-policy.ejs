@@ -31,6 +31,11 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
       <![endif]-->
+    <!-- Month Polyfill CSS-->
+    <!-- <link rel="stylesheet" href="js/month-polyfill/month-polyfill.css"> -->
+    <!--alerts CSS -->
+    <link href="../plugins/bower_components/sweetalert/sweetalert.css" rel="stylesheet" type="text/css">
+    
 </head>
 
 <body>
@@ -52,8 +57,7 @@
                 <div class="top-left-part">
                     <a class="logo" href="starter-page">
                         <!-- <b><img src="../plugins/images/admin-logo.png" alt="home" /></b> -->
-                        <!-
-                        - Logo text image you can use text also -->
+                        <!-- Logo text image you can use text also -->
                         <!-- <span class="hidden-xs"><img src="../plugins/images/admin-text.png" alt="home" /></span> -->
                         <h5 class="hidden-xs text-white m-l-10 m-t-20">Infinity Cars Insurance</h5>
                     </a>
@@ -171,289 +175,284 @@
                     </div>
                     <!-- /.breadcrumb -->
                 </div>
-
-                <!-- /.row -->
-                <!-- .row -->
+                <!-- USER .row -->
+                <div class="row">
+                <div class="col-sm-12">
+                <div class="white-box p-l-20 p-r-20">
+                    <h3 class="box-title m-b-0">Enter User details</h3>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <form class="floating-labels">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                        <div class="form-group m-b-40 m-t-20 has-feedback">
+                                            <input type="text" class="form-control required_elem" id="fn-input" required>
+                                            <span class="highlight"></span>
+                                            <span class="bar"></span>
+                                            <label for="fn-input">Enter First Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                        <div class="form-group m-b-40 m-t-20 has-warningss has-feedback">
+                                            <input type="text" class="form-control required_elem form-control-warningss" id="ln-input" required>
+                                            <span class="highlight"></span>
+                                            <span class="bar"></span>
+                                            <label for="ln-input">Enter Last Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                        <div class="form-group m-b-40 m-t-20 has-warningss has-feedback">
+                                            <input type="number" class="form-control required_elem form-control-warningss" id="mb-input" required>
+                                            <span class="highlight"></span>
+                                            <span class="bar"></span>
+                                            <label for="mb-input">Enter Mobile Number</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                        <div class="form-group m-b-40 m-t-20 has-successs has-feedback">
+                                            <input type="text" class="form-control required_elem form-control-successs" id="email" required>
+                                            <span class="highlight"></span>
+                                            <span class="bar"></span>
+                                            <label for="email">Enter E-mail</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                            <div class="form-group m-b-40 m-t-20 has-successs has-feedback">
+                                                <input type="text" class="form-control required_elem form-control-successs" id="prof" required>
+                                                <span class="highlight"></span>
+                                                <span class="bar"></span>
+                                                <label for="prof">Profession</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                            <div class="form-group m-b-40 m-t-20 ">
+                                                <input type="text" class="form-control required_elem " id="rega" required>
+                                                <span class="highlight"></span>
+                                                <span class="bar"></span>
+                                                <label for="rega">Registeration Authority</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                            <div class="form-group m-b-40 m-t-20 ">
+                                                <input type="text" class="form-control required_elem " id="lease" required>
+                                                <span class="highlight"></span>
+                                                <span class="bar"></span>
+                                                <label for="lease">HPA/Hyp/Lease To</label>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="form-group m-b-40 m-t-20 has-feedback">
+                                            <input type="text" class="form-control" id="addr" required>
+                                            <span class="highlight"></span>
+                                            <span class="bar"></span>
+                                            <label for="addr">Enter Address</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                        <div class="form-group m-b-40 m-t-20 ">
+                                            <input type="text" class="form-control required_elem " id="city" required>
+                                            <span class="highlight"></span>
+                                            <span class="bar"></span>
+                                            <label for="city">Enter City</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                        <div class="form-group m-b-40 m-t-20 ">
+                                            <input type="text" class="form-control required_elem " id="state" required>
+                                            <span class="highlight"></span>
+                                            <span class="bar"></span>
+                                            <label for="state">Enter State</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                        <div class="form-group m-b-40 m-t-20 ">
+                                            <input type="text" class="form-control required_elem " id="country" required>
+                                            <span class="highlight"></span>
+                                            <span class="bar"></span>
+                                            <label for="country">Enter Country</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                </div>
+                <!-- /USER .row -->
+                <!-- vehicle details .row -->
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="white-box p-l-20 p-r-20">
-                            <h3 class="box-title m-b-0">Enter User details</h3>
+                            <h3 class="box-title m-b-0">Enter Vehicle Details</h3>
                             <div class="row">
                                 <div class="col-md-12">
+                                    <div class="row">
+                                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                <div class="form-group m-b-40 m-t-20 has-successs has-feedback">
+                                                    <select name="make" id="make-drop" class="form-control required_elem">
+                                                        <option value="">Select Make</option>
+                                                        <option value="">Maruti</option>
+                                                        <option value="">Honda</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                <div class="form-group m-b-40 m-t-20 has-successs has-feedback">
+                                                    <select name="model" id="model-drop" class="form-control required_elem">
+                                                        <option value="">Select Model</option>
+                                                        <option value="">Swift</option>
+                                                        <option value="">City</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                <div class="form-group m-b-40 m-t-20 has-successs has-feedback">
+                                                    <select name="variant" id="variant-drop" class="form-control required_elem">
+                                                        <option value="">Select Variant</option>
+                                                        <option value="">VDI</option>
+                                                        <option value="">ZDI</option>
+                                                        <option value="">LDI</option>
+                                                        <option value="">LXI</option>
+                                                        <option value="">VXI</option>
+                                                        <option value="">ZXI</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                <div class="form-group m-b-40 m-t-20 has-successs has-feedback">
+                                                    <label for="myear">Select Manufacturing Year</label>
+                                                    <input type="month" placeholder="Select Manufacturing Year" class="form-control required_elem" id="myear">
+                                                </div>
+                                            </div>
+                                    </div>
                                     <form class="floating-labels">
                                         <div class="row">
                                             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                                                <div class="form-group m-b-40 m-t-20 has-successs has-feedback">
-                                                    <input type="text" class="form-control form-control-successs" id="fn-input" required>
+                                                <div class="form-group m-b-40 m-t-20 has-feedback">
+                                                    <input type="text" class="form-control required_elem" id="regno" required>
                                                     <span class="highlight"></span>
                                                     <span class="bar"></span>
-                                                    <label for="fn-input">Enter First Name</label>
+                                                    <label for="regno">Enter Registration Number</label>
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                                                <div class="form-group m-b-40 m-t-20 has-warningss has-feedback">
-                                                    <input type="text" class="form-control form-control-warningss" id="ln-input" required>
+                                                <div class="form-group m-b-40 m-t-20 has-feedback">
+                                                    <input type="text" class="form-control required_elem" id="engno" required >
                                                     <span class="highlight"></span>
                                                     <span class="bar"></span>
-                                                    <label for="ln-input">Enter Last Name</label>
-                                                </div>
-                                            </div>
-                                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                                                    <div class="form-group m-b-40 m-t-20 has-warningss has-feedback">
-                                                        <input type="text" class="form-control form-control-warningss" id="ln-input" required>
-                                                        <span class="highlight"></span>
-                                                        <span class="bar"></span>
-                                                        <label for="ln-input">Enter Mobile Number</label>
-                                                    </div>
-                                                </div>
-                                        </div>                                        
-                                        
-                                        <div class="row">
-                                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                                                <div class="form-group m-b-40 m-t-20 has-errors has-dangers has-feedback">
-                                                <input type="date" class="form-control date-picker" id="date-input" required value="1990-12-27">
-                                                <span class="highlight"></span>
-                                                <span class="bar"></span>
-                                                <label for="fn-input">Enter Date Of birth</label>
+                                                    <label for="engno">Enter Engine Number</label>
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                                                <div class="form-group m-b-40 m-t-20 has-successs has-feedback">
-                                                    <input type="text" class="form-control form-control-successs" id="add-input" required>
+                                                <div class="form-group m-b-40 m-t-20 has-feedback">
+                                                    <input type="text" class="form-control required_elem" id="chasisno" required>
                                                     <span class="highlight"></span>
                                                     <span class="bar"></span>
-                                                    <label for="add-input">Enter E-mail</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                                                <div class="form-group m-b-40 m-t-20 has-successs has-feedback">
-                                                    <input type="text" class="form-control form-control-successs" id="add-input" required>
-                                                    <span class="highlight"></span>
-                                                    <span class="bar"></span>
-                                                    <label for="add-input">Profession</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                                <div class="form-group m-b-40 m-t-20 has-errors has-dangers has-feedback">
-                                                    <input type="text" class="form-control" id="add-input" required>
-                                                    <span class="highlight"></span>
-                                                    <span class="bar"></span>
-                                                    <label for="add-input">Enter Address</label>
+                                                    <label for="chasisno">Enter Chasis Number</label>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                                                <div class="form-group m-b-40 m-t-20 ">
-                                                    <input type="text" class="form-control " id="add-input" required>
+                                                <div class="form-group m-b-40 m-t-20 has-feedback">
+                                                    <input type="number" class="form-control required_elem" id="ccno" required>
                                                     <span class="highlight"></span>
                                                     <span class="bar"></span>
-                                                    <label for="add-input">Enter City</label>
+                                                    <label for="ccno">Enter CC</label>
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                                                <div class="form-group m-b-40 m-t-20 ">
-                                                    <input type="text" class="form-control " id="add-input" required>
+                                                <div class="form-group m-b-40 m-t-20 has-feedback">
+                                                    <input type="text" class="form-control required_elem" id="bodytype" required>
                                                     <span class="highlight"></span>
                                                     <span class="bar"></span>
-                                                    <label for="add-input">Enter State</label>
+                                                    <label for="bodytype">Enter Body Type</label>
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                                                <div class="form-group m-b-40 m-t-20 ">
-                                                    <input type="text" class="form-control " id="add-input" required>
+                                                <div class="form-group m-b-40 m-t-20 has-feedback">
+                                                    <input type="text" class="form-control required_elem" id="seatcap" required>
                                                     <span class="highlight"></span>
                                                     <span class="bar"></span>
-                                                    <label for="add-input">Enter Country</label>
+                                                    <label for="seatcap">Enter Seating Capacity</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                                <div class="form-group m-b-40 m-t-20 has-feedback">
+                                                    <input type="text" class="form-control required_elem" id="poa" required value="0.0">
+                                                    <span class="highlight"></span>
+                                                    <span class="bar"></span>
+                                                    <label for="poa">Enter Premium On Accessories</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                                <div class="form-group m-b-40 m-t-20 has-feedback">
+                                                    <input type="text" class="form-control required_elem" id="tridv" required value="0.0">
+                                                    <span class="highlight"></span>
+                                                    <span class="bar"></span>
+                                                    <label for="tridv">Enter Trailer IDV</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                                <div class="form-group m-b-40 m-t-20 has-feedback">
+                                                    <input type="text" class="form-control required_elem" id="biofuel" required value="0.0">
+                                                    <span class="highlight"></span>
+                                                    <span class="bar"></span>
+                                                    <label for="biofuel">Bio Fuel/CNG/LPG Kit</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                <div class="form-group m-b-40 m-t-20 has-feedback">
+                                                    <input type="text" class="form-control required_elem" id="elect" required value="0.0">
+                                                    <span class="highlight"></span>
+                                                    <span class="bar"></span>
+                                                    <label for="elect">Electrical</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                <div class="form-group m-b-40 m-t-20 has-feedback">
+                                                    <input type="text" class="form-control required_elem" id="nonelect" required value="0.0">
+                                                    <span class="highlight"></span>
+                                                    <span class="bar"></span>
+                                                    <label for="nonelect">Non Electrical</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                <div class="form-group m-b-40 m-t-20 has-feedback">
+                                                    <input type="text" value="100" class="form-control required_elem" id="cov_t_dr" required>
+                                                    <span class="highlight"></span>
+                                                    <span class="bar"></span>
+                                                    <label for="cov_t_dr">Cover to Driver</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                <div class="form-group m-b-40 m-t-20 has-feedback">
+                                                    <input type="text" value="100" class="form-control required_elem" id="cov_t_pass" required>
+                                                    <span class="highlight"></span>
+                                                    <span class="bar"></span>
+                                                    <label for="cov_t_pass">Cover to Passenger</label>
                                                 </div>
                                             </div>
                                         </div>
                                     </form>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                    <div class="form-group m-b-40 m-t-20 ">
-                                        <input type="text" class="form-control " id="add-input" required>
-                                        <span class="highlight"></span>
-                                        <span class="bar"></span>
-                                        <label for="add-input">Registeration Authority</label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                    <div class="form-group m-b-40 m-t-20 ">
-                                        <input type="text" class="form-control " id="add-input" required>
-                                        <span class="highlight"></span>
-                                        <span class="bar"></span>
-                                        <label for="add-input">HPA/Hyp/Lease To</label>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
-                <!-- /.row -->
-                <!-- .row -->
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="white-box p-l-20 p-r-20">
-                            <h3 class="box-title m-b-0">Enter Vehicle Details</h3>
-                            <div class="row">
-                                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                                    <div class="form-group m-b-40 m-t-20 has-successs has-feedback">
-                                        <select name="make" id="" class="form-control">
-                                            <option value="">Select Make</option>
-                                            <option value="">Maruti</option>
-                                            <option value="">Honda</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                                    <div class="form-group m-b-40 m-t-20 has-successs has-feedback">
-                                        <select name="model" id="" class="form-control">
-                                            <option value="">Select Model</option>
-                                            <option value="">Swift</option>
-                                            <option value="">City</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                                    <div class="form-group m-b-40 m-t-20 has-successs has-feedback">
-                                        <select name="variant" id="" class="form-control">
-                                            <option value="">Select Variant</option>
-                                            <option value="">VDI</option>
-                                            <option value="">ZDI</option>
-                                            <option value="">LDI</option>
-                                            <option value="">LXI</option>
-                                            <option value="">VXI</option>
-                                            <option value="">ZXI</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                                    <div class="form-group m-b-40 m-t-20 has-successs has-feedback">
-                                        <input type="month" class="form-control" placeholder="M Year">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <form class="floating-labels">
-                                    <div class="row">
-                                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                                            <div class="form-group m-b-40 m-t-20 has-feedback">
-                                                <input type="text" class="form-control" id="reg-input" required>
-                                                <span class="highlight"></span>
-                                                <span class="bar"></span>
-                                                <label for="reg-input">Enter Registration Number</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                                            <div class="form-group m-b-40 m-t-20 has-feedback">
-                                                <input type="text" class="form-control" id="eng-input" required >
-                                                <span class="highlight"></span>
-                                                <span class="bar"></span>
-                                                <label for="eng-input">Enter Engine Number</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                                            <div class="form-group m-b-40 m-t-20 has-feedback">
-                                                <input type="text" class="form-control" id="chasis-input" required>
-                                                <span class="highlight"></span>
-                                                <span class="bar"></span>
-                                                <label for="chasis-input">Enter Chasis Number</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                                            <div class="form-group m-b-40 m-t-20 has-feedback">
-                                                <input type="text" class="form-control" id="reg-input" required>
-                                                <span class="highlight"></span>
-                                                <span class="bar"></span>
-                                                <label for="reg-input">Enter CC</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                                            <div class="form-group m-b-40 m-t-20 has-feedback">
-                                                <input type="text" class="form-control" id="eng-input" required>
-                                                <span class="highlight"></span>
-                                                <span class="bar"></span>
-                                                <label for="eng-input">Enter Body Type</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                                            <div class="form-group m-b-40 m-t-20 has-feedback">
-                                                <input type="text" class="form-control" id="chasis-input" required>
-                                                <span class="highlight"></span>
-                                                <span class="bar"></span>
-                                                <label for="chasis-input">Enter Seating Capacity</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                            <div class="form-group m-b-40 m-t-20 has-feedback">
-                                                <input type="text" class="form-control" id="reg-input" required value="0.0">
-                                                <span class="highlight"></span>
-                                                <span class="bar"></span>
-                                                <label for="reg-input">Enter Trailer IDV</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                                            <div class="form-group m-b-40 m-t-20 has-feedback">
-                                                <input type="text" class="form-control" id="eng-input" required value="0.0">
-                                                <span class="highlight"></span>
-                                                <span class="bar"></span>
-                                                <label for="eng-input">Bio Fuel/CNG/LPG Kit</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                                            <div class="form-group m-b-40 m-t-20 has-feedback">
-                                                <input type="text" class="form-control" id="reg-input" required value="0.0">
-                                                <span class="highlight"></span>
-                                                <span class="bar"></span>
-                                                <label for="reg-input">Electrical</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                                            <div class="form-group m-b-40 m-t-20 has-feedback">
-                                                <input type="text" class="form-control" id="eng-input" required value="0.0">
-                                                <span class="highlight"></span>
-                                                <span class="bar"></span>
-                                                <label for="eng-input">Non Electrical</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                                            <div class="form-group m-b-40 m-t-20 has-feedback">
-                                                <input type="text" class="form-control" id="chasis-input" required>
-                                                <span class="highlight"></span>
-                                                <span class="bar"></span>
-                                                <label for="chasis-input">Cover to Driver</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                                            <div class="form-group m-b-40 m-t-20 has-feedback">
-                                                <input type="text" class="form-control" id="chasis-input" required>
-                                                <span class="highlight"></span>
-                                                <span class="bar"></span>
-                                                <label for="chasis-input">Cover to Passenger</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    
-                                </form>
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
-                <!-- /.row -->
-                <!-- .row -->
+                <!-- /vehicle details .row -->
+                <!-- addon .row -->
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="white-box p-l-20 p-r-20">
@@ -462,22 +461,10 @@
                                 <form>
                                     <div class="form-group">
                                         <div class="input-group">
-                                            <ul class="icheck-list">
-                                                <li>
-                                                    <input type="checkbox" class="check" id="square-checkbox-1" disabled data-checkbox="icheckbox_square-red">
-                                                    <label for="square-checkbox-1">Tyre Damage</label>
-                                                </li>
-                                                <li>
-                                                    <input type="checkbox" class="check" id="square-checkbox-2" disabled data-checkbox="icheckbox_square-red">
-                                                    <label for="square-checkbox-2">NCB Protection</label>
-                                                </li>
-                                                <li>
-                                                    <input type="checkbox" class="check" id="square-checkbox-disabled" disabled data-checkbox="icheckbox_square-red">
-                                                    <label for="square-checkbox-disabled">Return To Invoice</label>
-                                                </li>
-                                                <li>
-                                                    <input type="checkbox" class="check" id="square-checkbox-disabled-checked" disabled data-checkbox="icheckbox_square-red">
-                                                    <label for="square-checkbox-disabled-checked">Inconvinence Allowance</label>
+                                            <ul id="addon_list" class="icheck-list">
+                                                <li id="normal">
+                                                    <input type="checkbox" id="depprem" data-checkbox="icheckbox_square-red">
+                                                    <label for="depprem">Deprication Premium</label>
                                                 </li>
                                             </ul>
                                         </div>
@@ -487,157 +474,232 @@
                         </div>
                     </div>
                 </div>
-                <!-- /.row -->
-                <!-- .row -->
+                <!-- /ADDON.row -->
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="white-box p-l-20 p-r-20">
                             <h3 class="box-title m-b-0">Calculate Premium</h3>
                             <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="form-group m-b-40 m-t-20 has-successs has-feedback">
+                                        <label for="pdt">Policy Date and TIme</label>
+                                        <input type="datetime-local" class="form-control required_elem form-control-successs" id="pdt" required>
+                                        <span class="highlight"></span>
+                                        <span class="bar"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
                                 <div class="col-md-12">
                                     <form>
-                                    <div class="floating-labels">
+                                        <div class="floating-labels">
+                                            <div class="row">
+                                                <div class="col-lg-5 col-md-8 col-sm-12 col-xs-12">
+                                                    <div class="form-group m-b-40 m-t-20 has-successs has-feedback">
+                                                        <input type="text" class="form-control required_elem form-control-successs" id="idv" required>
+                                                        <span class="highlight"></span>
+                                                        <span class="bar"></span>
+                                                        <label for="idv">Enter IDV</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-2 col-md-4 col-sm-12 col-xs-12">
+                                                    <div class="form-group m-b-40 m-t-20 has-warningss has-feedback">
+                                                        <input type="text" class="form-control required_elem form-control-warningss" id="perod" required>
+                                                        <span class="highlight"></span>
+                                                        <span class="bar"></span>
+                                                        <label for="perod">Enter Own Damage %</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
+                                                    <div class="form-group m-b-40 m-t-20 has-warningss has-feedback">
+                                                        <input type="text" class="form-control required_elem form-control-warnings disabled-val" id="od" required >
+                                                        <span class="highlight"></span>
+                                                        <span class="bar"></span>
+                                                        <label for="od">Own Damage Value</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="row">
-                                            <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                                 <div class="form-group m-b-40 m-t-20 has-successs has-feedback">
-                                                    <input type="text" class="form-control form-control-successs" id="idv-input" required>
-                                                    <span class="highlight"></span>
-                                                    <span class="bar"></span>
-                                                    <label for="idv-input">Enter IDV</label>
+                                                    <select name="Tarrif Discount" id="pertd" class="form-control">
+                                                        <option value="0">Tarrif Discount</option>
+                                                        <!-- <option value="5">5 %</option>
+                                                        <option value="10">10 %</option>
+                                                        <option value="15">15 %</option>
+                                                        <option value="20">20 %</option>
+                                                        <option value="25">25 %</option> -->
+                                                        <option value="30">30 %</option>
+                                                        <option value="35">35 %</option>
+                                                        <option value="40">40 %</option>
+                                                        <option value="45">45 %</option>
+                                                        <option value="50">50 %</option>
+                                                        <option value="55">55 %</option>
+                                                        <option value="60">60 %</option>
+                                                        <option value="65">65 %</option>
+                                                        <option value="70">70 %</option>
+                                                        <option value="75">75 %</option>
+                                                        <option value="80">80 %</option>
+                                                    </select>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-4">
-                                                <div class="form-group m-b-40 m-t-20 has-warningss has-feedback">
-                                                    <input type="text" class="form-control form-control-warningss" id="ud-input" required>
+                                            <div class="floating-labels col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                                                <div class="form-group m-b-40 m-t-20 has-successs has-feedback">
+                                                    <input type="text" class="form-control required_elem form-control-successs disabled-val" id="td" required>
                                                     <span class="highlight"></span>
                                                     <span class="bar"></span>
-                                                    <label for="ud-input">Enter Own Damage %</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-5 col-md-5 col-sm-8 col-xs-8">
-                                                <div class="form-group m-b-40 m-t-20 has-warningss has-feedback">
-                                                    <input type="text" class="form-control form-control-warningss" id="ud-input" required>
-                                                    <span class="highlight"></span>
-                                                    <span class="bar"></span>
-                                                    <label for="ud-input">Enter Own Damage Value</label>
+                                                    <label for="td">Total Tarrif Discount</label>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                            <div class="form-group m-b-40 m-t-20 has-successs has-feedback">
-                                                <select name="TD" id="" class="form-control">
-                                                    <option value="">Tariff Discount</option>
-                                                    <option value="">5 %</option>
-                                                    <option value="">10 %</option>
-                                                    <option value="">15 %</option>
-                                                    <option value="">20 %</option>
-                                                    <option value="">25 %</option>
-                                                    <option value="">30 %</option>
-                                                    <option value="">35 %</option>
-                                                    <option value="">40 %</option>
-                                                    <option value="">45 %</option>
-                                                    <option value="">50 %</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                            <div class="form-group m-b-40 m-t-20">
-                                                <input type="text" class="form-control form-control-successs" id="nod-input" required disabled placeholder="NET OD">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                            <div class="form-group m-b-40 m-t-20 has-successs has-feedback">
-                                                <select name="NCB" id="" class="form-control">
-                                                    <option value="">NCB Discount</option>
-                                                    <option value="">5 %</option>
-                                                    <option value="">10 %</option>
-                                                    <option value="">15 %</option>
-                                                    <option value="">20 %</option>
-                                                    <option value="">25 %</option>
-                                                    <option value="">30 %</option>
-                                                    <option value="">35 %</option>
-                                                    <option value="">40 %</option>
-                                                    <option value="">45 %</option>
-                                                    <option value="">50 %</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-                                            <div class="form-group m-b-40 m-t-20 has-successs has-feedback">
-                                                <input type="text" class="form-control form-control-successs" id="ncb-input" required disabled placeholder="No Claim Bonus">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                            <div class="form-group m-b-40 m-t-20">
-                                                <input type="text" class="form-control form-control-successs" id="nod-input" required disabled placeholder="Total OD Premium">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="floating-labels">
                                         <div class="row">
-                                            
-                                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                                <div class="form-group m-b-40 m-t-20 has-warningss has-feedback">
-                                                    <input type="text" class="form-control form-control-warningss" id="ud-input" required>
+                                            <div class="floating-labels col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <div class="form-group m-b-40 m-t-20">
+                                                    <input type="text" class="form-control required_elem form-control-successs disabled-val" id="nod" required>
                                                     <span class="highlight"></span>
                                                     <span class="bar"></span>
-                                                    <label for="ud-input">Unnamed Passenger PA</label>
+                                                    <label for="nod">NET OD</label>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                                 <div class="form-group m-b-40 m-t-20 has-successs has-feedback">
-                                                    <input type="text" class="form-control form-control-successs" id="idv-input" required>
+                                                    <select name="NCB" id="perncb" class="form-control">
+                                                        <option value="0">NCB Discount</option>
+                                                        <option value="5">5 %</option>
+                                                        <option value="10">10 %</option>
+                                                        <option value="15">15 %</option>
+                                                        <option value="20">20 %</option>
+                                                        <option value="25">25 %</option>
+                                                        <option value="30">30 %</option>
+                                                        <option value="35">35 %</option>
+                                                        <option value="40">40 %</option>
+                                                        <option value="45">45 %</option>
+                                                        <option value="50">50 %</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="floating-labels col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                                                <div class="form-group m-b-40 m-t-20 has-successs has-feedback">
+                                                    <input type="text" class="form-control required_elem form-control-successs disabled-val" id="ncb" required>
                                                     <span class="highlight"></span>
                                                     <span class="bar"></span>
-                                                    <label for="idv-input">Third Party</label>
+                                                    <label for="ncb">No Claim Bonus</label>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                            <div class="form-group m-b-40 m-t-20">
-                                                <input type="text" class="form-control form-control-successs" id="nod-input" required disabled placeholder="Legal Liability">
+                                        <div class="row">
+                                            <div class="floating-labels col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <div class="form-group m-b-40 m-t-20">
+                                                    <input type="text" class="form-control required_elem form-control-successs disabled-val" id="tod" required>
+                                                    <span class="highlight"></span>
+                                                    <span class="bar"></span>
+                                                    <label for="tod">Total OD Premium</label>
+                                                    
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                            <div class="form-group m-b-40 m-t-20">
-                                                <input type="text" class="form-control form-control-successs" id="nod-input" required disabled placeholder="Compulsary Personal Accident ">
+                                        <div class="floating-labels">
+                                            <div class="row">
+                                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                    <div class="form-group m-b-40 m-t-20 has-warningss has-feedback">
+                                                        <input type="text" class="form-control required_elem form-control-warningss" id="unpa" required>
+                                                        <span class="highlight"></span>
+                                                        <span class="bar"></span>
+                                                        <label for="unpa">Unnamed Passenger PA</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                    <div class="form-group m-b-40 m-t-20 has-successs has-feedback">
+                                                        <input type="text" class="form-control required_elem form-control-successs" id="trdprty" required>
+                                                        <span class="highlight"></span>
+                                                        <span class="bar"></span>
+                                                        <label for="trdprty">Third Party</label>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                                            <div class="form-group m-b-40 m-t-20">
-                                                <input type="text" class="form-control form-control-successs" id="nod-input" required disabled placeholder="NET PREMIUM">
+                                        <div class="row floating-labels">
+                                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                <div class="form-group m-b-40 m-t-20">
+                                                    <input type="text" value="150" class="form-control required_elem form-control-successs calcnp" id="legal" required>
+                                                    <span class="highlight"></span>
+                                                    <span class="bar"></span>
+                                                    <label for="legal">Legal Liability</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                <div class="form-group m-b-40 m-t-20">
+                                                    <input type="text" value="100" class="form-control required_elem form-control-successs calcnp"  id="cpa" required>
+                                                    <span class="highlight"></span>
+                                                    <span class="bar"></span>
+                                                    <label for="cpa">Compulsary Personal Accident </label>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-2 col-md-2    col-sm-12 col-xs-12">
-                                            <div class="form-group m-b-40 m-t-20">
-                                                <input type="text" class="form-control form-control-successs" id="nod-input" required disabled placeholder="GST 18 %">
+                                        <div class="row">
+                                            <div class="floating-labels col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                                <div class="form-group m-b-40 m-t-20">
+                                                    <input type="text" class="form-control required_elem form-control-successs calcnp disabled-val"  id="netp" required>
+                                                    <span class="highlight"></span>
+                                                    <span class="bar"></span>
+                                                    <label for="netp">NET PREMIUM</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-2 col-md-2    col-sm-12 col-xs-12">
+                                                <div class="form-group m-b-40 m-t-20">
+                                                    <input type="text" class="form-control required_elem form-control-successs calcnp"  id="gst" required disabled placeholder="GST 18 %">
+                                                </div>
+                                            </div>
+                                            <div class="floating-labels col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                <div class="form-group m-b-40 m-t-20">
+                                                    <input type="text" class="form-control required_elem form-control-successs calcnp disabled-val"  id="tcp" required>
+                                                    <span class="highlight"></span>
+                                                    <span class="bar"></span>
+                                                    <label for="tcp">Total Comprehensive Premium</label>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                            <div class="form-group m-b-40 m-t-20">
-                                                <input type="text" class="form-control form-control-successs" id="nod-input" required disabled placeholder="Total Comprehensive Premium">
+                                        <div class="row floating-labels">
+                                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                    <div class="form-group m-b-40 m-t-20">
+                                                            <input type="number" class="form-control form-control-successs calcAddon" disabled="true" id="addonper" required>
+                                                            <span class="highlight"></span>
+                                                            <span class="bar"></span>
+                                                            <label for="addonper">Deprication Premium Addons Cover %</label>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                    <div class="form-group m-b-40 m-t-20">
+                                                        <input type="number" class="form-control form-control-successs calcAddon" disabled="true" id="rsa" required>
+                                                        <span class="highlight"></span>
+                                                        <span class="bar"></span>
+                                                        <label for="rsa">Road Side Assistance</label>
+                                                    </div>
+                                                </div>
+                                        </div>
+                                        <div class="row floating-labels">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <div class="form-group m-b-40 m-t-20">
+                                                    <input type="number" class="form-control form-control-successs disabled-val calcAddon" disabled="true" id="zerodep" required>
+                                                    <span class="highlight"></span>
+                                                    <span class="bar"></span>
+                                                    <label for="zerodep">Zero Deprication Price</label>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </form>
+                                    
                                     <div class="form-group text-center m-t-20">
                                         <div class="col-xs-12">
-                                            <button class="btn btn-info btn-block text-uppercase waves-effect waves-light" type="submit">Create Policy </button>
+                                            <button class="btn btn-info btn-block text-uppercase waves-effect waves-light" id="policy-save" type="submit">Create Policy </button>
                                         </div>
                                     </div>
                                 </div>                                    
-                            </form>
+                            
                             </div>
                         </div>
                     </div>
@@ -677,6 +739,14 @@
     <script src="js/waves.js"></script>
     <!-- Custom Theme JavaScript -->
     <script src="js/custom.min.js"></script>
+    <!-- <script src="node_modules/modernizr/lib/build.js"></script>
+    <!-- Month Polyfill JS-->
+    <!-- <script src="js/month-polyfill/month-polyfill.js"></script>  -->
+    <!-- Sweet-Alert  -->
+    <script src="../plugins/bower_components/sweetalert/sweetalert.min.js"></script>
+    <script src="../plugins/bower_components/sweetalert/jquery.sweet-alert.custom.js"></script>
+
+    <script src="dist/policy.js"></script>
 </body>
 
 </html>
