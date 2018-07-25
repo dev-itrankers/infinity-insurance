@@ -48,12 +48,11 @@ app.use(helper);
 //   done(null,user);
 // }));
 app.use(defaultRoute);
-var options = {
-  server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } },
-  replset: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } }
-};
-var db = mongoose.connect(process.env.DB_CONN);
 
+var db = mongoose.connect(process.env.DB_CONN);
+db.catch(function(err){
+  console.log(err);
+})
 mongoose.set("debug",true);
 app.listen(process.env.PORT,function(){
   console.log("Server started at port -> ",process.env.PORT);

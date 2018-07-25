@@ -22,9 +22,9 @@ router.post("/",function(req,res){
   addon.save(function(err,user){
     if(err) {
       err.err_val = req.body.name;
-      return response.send(res,500,"Internal server error",err)
+      return response.send(res,500,"Internal server error",err);
     }
-    response.send(res,201,"addon "+req.body.name+" added")
+    response.send(res,201,"addon "+req.body.name+" added");
   });
 });
 
