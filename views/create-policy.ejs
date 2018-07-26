@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<!--
+   This is a starter template page. Use this page to start your new project from
+   scratch. This page gets rid of all links and provides the needed markup only.
+   -->
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../plugins/images/favicon.png">
+    <title>Infinity Cars Insurance - Dashboard</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../plugins/bower_components/bootstrap-extension/css/bootstrap-extension.css" rel="stylesheet">
+    <!-- This is Sidebar menu CSS -->
+    <link href="../plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css" rel="stylesheet">
+    <!-- This is a Animation CSS -->
+    <link href="css/animate.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/colors/blue.css" id="theme" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- warningss: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+    <!-- Month Polyfill CSS-->
+    <!-- <link rel="stylesheet" href="js/month-polyfill/month-polyfill.css"> -->
+    <!--alerts CSS -->
+    <link href="../plugins/bower_components/sweetalert/sweetalert.css" rel="stylesheet" type="text/css">
+    
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="cssload-speeding-wheel"></div>
+    </div>
+    <div id="wrapper">
+        <!-- Top Navigation -->
+        <nav class="navbar navbar-default navbar-static-top m-b-0">
+            <div class="navbar-header">
+
+                <!-- Toggle icon for mobile view -->
+                <a class="navbar-toggle hidden-sm hidden-md hidden-lg " href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse">
+                    <i class="ti-menu"></i>
+                </a>
+                <!-- Logo -->
+
+                <div class="top-left-part">
+                    <a class="logo" href="starter-page">
+                        <!-- <b><img src="../plugins/images/admin-logo.png" alt="home" /></b> -->
+                        <!-- Logo text image you can use text also -->
+                        <!-- <span class="hidden-xs"><img src="../plugins/images/admin-text.png" alt="home" /></span> -->
+                        <h5 class="hidden-xs text-white m-l-10 m-t-20">Infinity Cars Insurance</h5>
+                    </a>
+                </div>
+                <!-- /Logo -->
+                <!--Toggle icon -->
+                <ul class="nav navbar-top-links navbar-left hidden-xs">
+                    <li>
+                        <a href="javascript:void(0)" class="open-close hidden-xs waves-effect waves-light">
+                            <i class="icon-arrow-left-circle ti-menu"></i>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-top-links navbar-left hidden-sm hidden-md hidden-lg">
+                    <li>
+                        <h4 class="text-uppercase text-bold text-white" style="position:relative;top:12px;font-size:16px;font-weight:500;">Infinity Cars Insurance</h4>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-top-links navbar-right pull-right">
+                    <!-- .user dropdown -->
+
+                    <li class="dropdown">
+                        <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#">
+                            <img src="../plugins/images/users/varun.jpg" alt="user-img" width="36" class="img-circle">
+                            <b class="hidden-xs">Pavan</b>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user animated flipInY">
+                            <li>
+                                <a href="#">
+                                    <i class="ti-user"></i> My Profile</a>
+                            </li>
+                            <li role="separator" class="divider"></li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-power-off"></i> Logout</a>
+                            </li>
+                        </ul>
+                        <!-- /.user dropdown-user -->
+                    </li>
+                    <!-- /.user dropdown -->
+                    <li class="right-side-toggle">
+                        <a class="waves-effect waves-light" href="javascript:void(0)">
+                            <i class="ti-settings"></i>
+                        </a>
+                    </li>
+                    <!-- /.dropdown -->
+                </ul>
+            </div>
+            <!-- /.navbar-header -->
+            <!-- /.navbar-top-links -->
+            <!-- /.navbar-static-side -->
+        </nav>
+        <!-- End Top Navigation -->
+        <!-- Left navbar-header -->
+        <div class="navbar-default sidebar" role="navigation">
+            <div class="sidebar-nav navbar-collapse">
+                <ul class="nav" id="side-menu">
+                    <li>
+                        <a href="starter-page" class="waves-effect">
+                            <i class="linea-icon linea-basic fa-fw" data-icon="v"></i>
+                            <span class="hide-menu"> Dashboard
+                                <span class="fa arrow"></span>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="add-details" class="waves-effect">
+                            <i class="linea-icon linea-basic fa-fw" data-icon="v"></i>
+                            <span class="hide-menu"> Add Details
+                                <span class="fa arrow"></span>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="waves-effect active">
+                            <i class="linea-icon linea-basic fa-fw" data-icon="v"></i>
+                            <span class="hide-menu"> Create Policy
+                                <span class="fa arrow"></span>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="all-policies" class="waves-effect">
+                            <i class="linea-icon linea-basic fa-fw" data-icon="v"></i>
+                            <span class="hide-menu"> Show all Policies
+                                <span class="fa arrow"></span>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Left navbar-header end -->
+        <!-- Page Content -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row bg-title">
+                    <!-- .page title -->
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                        <h4 class="page-title">Create New Policy</h4>
+                    </div>
+                    <!-- /.page title -->
+                    <!-- .breadcrumb -->
+                    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                        
+                        <ol class="breadcrumb">
+                            <li class="">
+                                <a href="starter-page">Dashboard</a>
+                            </li>
+                            <li class="active">
+                                Create New Policy
+                            </li>
+                        </ol>
+                    </div>
+                    <!-- /.breadcrumb -->
+                </div>
+                <!-- USER .row -->
+                <div class="row">
+                <div class="col-sm-12">
+                <div class="white-box p-l-20 p-r-20">
+                    <h3 class="box-title m-b-0">Enter User details</h3>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <form class="floating-labels">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                        <div class="form-group m-b-40 m-t-20 has-feedback">
+                                            <input type="text" class="form-control required_elem" id="fn-input" required>
+                                            <span class="highlight"></span>
+                                            <span class="bar"></span>
+                                            <label for="fn-input">Enter First Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                        <div class="form-group m-b-40 m-t-20 has-warningss has-feedback">
+                                            <input type="text" class="form-control required_elem form-control-warningss" id="ln-input" required>
+                                            <span class="highlight"></span>
+                                            <span class="bar"></span>
+                                            <label for="ln-input">Enter Last Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                        <div class="form-group m-b-40 m-t-20 has-warningss has-feedback">
+                                            <input type="number" class="form-control required_elem form-control-warningss" id="mb-input" required>
+                                            <span class="highlight"></span>
+                                            <span class="bar"></span>
+                                            <label for="mb-input">Enter Mobile Number</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                        <div class="form-group m-b-40 m-t-20 has-successs has-feedback">
+                                            <input type="text" class="form-control required_elem form-control-successs" id="email" required>
+                                            <span class="highlight"></span>
+                                            <span class="bar"></span>
+                                            <label for="email">Enter E-mail</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                            <div class="form-group m-b-40 m-t-20 has-successs has-feedback">
+                                                <input type="text" class="form-control required_elem form-control-successs" id="prof" required>
+                                                <span class="highlight"></span>
+                                                <span class="bar"></span>
+                                                <label for="prof">Profession</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                            <div class="form-group m-b-40 m-t-20 ">
+                                                <input type="text" class="form-control required_elem " id="rega" required>
+                                                <span class="highlight"></span>
+                                                <span class="bar"></span>
+                                                <label for="rega">Registeration Authority</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                            <div class="form-group m-b-40 m-t-20 ">
+                                                <input type="text" class="form-control required_elem " id="lease" required>
+                                                <span class="highlight"></span>
+                                                <span class="bar"></span>
+                                                <label for="lease">HPA/Hyp/Lease To</label>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="form-group m-b-40 m-t-20 has-feedback">
+                                            <input type="text" class="form-control" id="addr" required>
+                                            <span class="highlight"></span>
+                                            <span class="bar"></span>
+                                            <label for="addr">Enter Address</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                        <div class="form-group m-b-40 m-t-20 ">
+                                            <input type="text" class="form-control required_elem " id="city" required>
+                                            <span class="highlight"></span>
+                                            <span class="bar"></span>
+                                            <label for="city">Enter City</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                        <div class="form-group m-b-40 m-t-20 ">
+                                            <input type="text" class="form-control required_elem " id="state" required>
+                                            <span class="highlight"></span>
+                                            <span class="bar"></span>
+                                            <label for="state">Enter State</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                        <div class="form-group m-b-40 m-t-20 ">
+                                            <input type="text" class="form-control required_elem " id="country" required>
+                                            <span class="highlight"></span>
+                                            <span class="bar"></span>
+                                            <label for="country">Enter Country</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                </div>
+                <!-- /USER .row -->
+                <!-- vehicle details .row -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="white-box p-l-20 p-r-20">
+                            <h3 class="box-title m-b-0">Enter Vehicle Details</h3>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                <div class="form-group m-b-40 m-t-20 has-successs has-feedback">
+                                                    <select name="make" id="make-drop" class="form-control required_elem">
+                                                        <option value="">Select Make</option>
+                                                        <option value="">Maruti</option>
+                                                        <option value="">Honda</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                <div class="form-group m-b-40 m-t-20 has-successs has-feedback">
+                                                    <select name="model" id="model-drop" class="form-control required_elem">
+                                                        <option value="">Select Model</option>
+                                                        <option value="">Swift</option>
+                                                        <option value="">City</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                <div class="form-group m-b-40 m-t-20 has-successs has-feedback">
+                                                    <select name="variant" id="variant-drop" class="form-control required_elem">
+                                                        <option value="">Select Variant</option>
+                                                        <option value="">VDI</option>
+                                                        <option value="">ZDI</option>
+                                                        <option value="">LDI</option>
+                                                        <option value="">LXI</option>
+                                                        <option value="">VXI</option>
+                                                        <option value="">ZXI</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                <div class="form-group m-b-40 m-t-20 has-successs has-feedback">
+                                                    <label for="myear">Select Manufacturing Year</label>
+                                                    <input type="month" placeholder="Select Manufacturing Year" class="form-control required_elem" id="myear">
+                                                </div>
+                                            </div>
+                                    </div>
+                                    <form class="floating-labels">
+                                        <div class="row">
+                                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                                <div class="form-group m-b-40 m-t-20 has-feedback">
+                                                    <input type="text" class="form-control required_elem" id="regno" required>
+                                                    <span class="highlight"></span>
+                                                    <span class="bar"></span>
+                                                    <label for="regno">Enter Registration Number</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                                <div class="form-group m-b-40 m-t-20 has-feedback">
+                                                    <input type="text" class="form-control required_elem" id="engno" required >
+                                                    <span class="highlight"></span>
+                                                    <span class="bar"></span>
+                                                    <label for="engno">Enter Engine Number</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                                <div class="form-group m-b-40 m-t-20 has-feedback">
+                                                    <input type="text" class="form-control required_elem" id="chasisno" required>
+                                                    <span class="highlight"></span>
+                                                    <span class="bar"></span>
+                                                    <label for="chasisno">Enter Chasis Number</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                                <div class="form-group m-b-40 m-t-20 has-feedback">
+                                                    <input type="number" class="form-control required_elem" id="ccno" required>
+                                                    <span class="highlight"></span>
+                                                    <span class="bar"></span>
+                                                    <label for="ccno">Enter CC</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                                <div class="form-group m-b-40 m-t-20 has-feedback">
+                                                    <input type="text" class="form-control required_elem" id="bodytype" required>
+                                                    <span class="highlight"></span>
+                                                    <span class="bar"></span>
+                                                    <label for="bodytype">Enter Body Type</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                                <div class="form-group m-b-40 m-t-20 has-feedback">
+                                                    <input type="text" class="form-control required_elem" id="seatcap" required>
+                                                    <span class="highlight"></span>
+                                                    <span class="bar"></span>
+                                                    <label for="seatcap">Enter Seating Capacity</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                                <div class="form-group m-b-40 m-t-20 has-feedback">
+                                                    <input type="text" class="form-control required_elem" id="poa" required value="0.0">
+                                                    <span class="highlight"></span>
+                                                    <span class="bar"></span>
+                                                    <label for="poa">Enter Premium On Accessories</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                                <div class="form-group m-b-40 m-t-20 has-feedback">
+                                                    <input type="text" class="form-control required_elem" id="tridv" required value="0.0">
+                                                    <span class="highlight"></span>
+                                                    <span class="bar"></span>
+                                                    <label for="tridv">Enter Trailer IDV</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                                <div class="form-group m-b-40 m-t-20 has-feedback">
+                                                    <input type="text" class="form-control required_elem" id="biofuel" required value="0.0">
+                                                    <span class="highlight"></span>
+                                                    <span class="bar"></span>
+                                                    <label for="biofuel">Bio Fuel/CNG/LPG Kit</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                <div class="form-group m-b-40 m-t-20 has-feedback">
+                                                    <input type="text" class="form-control required_elem" id="elect" required value="0.0">
+                                                    <span class="highlight"></span>
+                                                    <span class="bar"></span>
+                                                    <label for="elect">Electrical</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                <div class="form-group m-b-40 m-t-20 has-feedback">
+                                                    <input type="text" class="form-control required_elem" id="nonelect" required value="0.0">
+                                                    <span class="highlight"></span>
+                                                    <span class="bar"></span>
+                                                    <label for="nonelect">Non Electrical</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                <div class="form-group m-b-40 m-t-20 has-feedback">
+                                                    <input type="text" value="100" class="form-control required_elem" id="cov_t_dr" required>
+                                                    <span class="highlight"></span>
+                                                    <span class="bar"></span>
+                                                    <label for="cov_t_dr">Cover to Driver</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                                <div class="form-group m-b-40 m-t-20 has-feedback">
+                                                    <input type="text" value="100" class="form-control required_elem" id="cov_t_pass" required>
+                                                    <span class="highlight"></span>
+                                                    <span class="bar"></span>
+                                                    <label for="cov_t_pass">Cover to Passenger</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /vehicle details .row -->
+                <!-- addon .row -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="white-box p-l-20 p-r-20">
+                            <h3 class="box-title m-b-0">Select Addons</h3>
+                            <div class="skin skin-square">
+                                <form>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <ul id="addon_list" class="icheck-list">
+                                                <li id="normal">
+                                                    <input type="checkbox" id="depprem" data-checkbox="icheckbox_square-red">
+                                                    <label for="depprem">Deprication Premium</label>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>                             
+                        </div>
+                    </div>
+                </div>
+                <!-- /ADDON.row -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="white-box p-l-20 p-r-20">
+                            <h3 class="box-title m-b-0">Calculate Premium</h3>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="form-group m-b-40 m-t-20 has-successs has-feedback">
+                                        <label for="pdt">Policy Date and TIme</label>
+                                        <input type="datetime-local" class="form-control required_elem form-control-successs" id="pdt" required>
+                                        <span class="highlight"></span>
+                                        <span class="bar"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <form>
+                                        <div class="floating-labels">
+                                            <div class="row">
+                                                <div class="col-lg-5 col-md-8 col-sm-12 col-xs-12">
+                                                    <div class="form-group m-b-40 m-t-20 has-successs has-feedback">
+                                                        <input type="text" class="form-control required_elem form-control-successs" id="idv" required>
+                                                        <span class="highlight"></span>
+                                                        <span class="bar"></span>
+                                                        <label for="idv">Enter IDV</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-2 col-md-4 col-sm-12 col-xs-12">
+                                                    <div class="form-group m-b-40 m-t-20 has-warningss has-feedback">
+                                                        <input type="text" class="form-control required_elem form-control-warningss" id="perod" required>
+                                                        <span class="highlight"></span>
+                                                        <span class="bar"></span>
+                                                        <label for="perod">Enter Own Damage %</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
+                                                    <div class="form-group m-b-40 m-t-20 has-warningss has-feedback">
+                                                        <input type="text" class="form-control required_elem form-control-warnings disabled-val" id="od" required >
+                                                        <span class="highlight"></span>
+                                                        <span class="bar"></span>
+                                                        <label for="od">Own Damage Value</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                                <div class="form-group m-b-40 m-t-20 has-successs has-feedback">
+                                                    <select name="Tarrif Discount" id="pertd" class="form-control">
+                                                        <option value="0">Tarrif Discount</option>
+                                                        <!-- <option value="5">5 %</option>
+                                                        <option value="10">10 %</option>
+                                                        <option value="15">15 %</option>
+                                                        <option value="20">20 %</option>
+                                                        <option value="25">25 %</option> -->
+                                                        <option value="30">30 %</option>
+                                                        <option value="35">35 %</option>
+                                                        <option value="40">40 %</option>
+                                                        <option value="45">45 %</option>
+                                                        <option value="50">50 %</option>
+                                                        <option value="55">55 %</option>
+                                                        <option value="60">60 %</option>
+                                                        <option value="65">65 %</option>
+                                                        <option value="70">70 %</option>
+                                                        <option value="75">75 %</option>
+                                                        <option value="80">80 %</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="floating-labels col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                                                <div class="form-group m-b-40 m-t-20 has-successs has-feedback">
+                                                    <input type="text" class="form-control required_elem form-control-successs disabled-val" id="td" required>
+                                                    <span class="highlight"></span>
+                                                    <span class="bar"></span>
+                                                    <label for="td">Total Tarrif Discount</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="floating-labels col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <div class="form-group m-b-40 m-t-20">
+                                                    <input type="text" class="form-control required_elem form-control-successs disabled-val" id="nod" required>
+                                                    <span class="highlight"></span>
+                                                    <span class="bar"></span>
+                                                    <label for="nod">NET OD</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                                <div class="form-group m-b-40 m-t-20 has-successs has-feedback">
+                                                    <select name="NCB" id="perncb" class="form-control">
+                                                        <option value="0">NCB Discount</option>
+                                                        <option value="5">5 %</option>
+                                                        <option value="10">10 %</option>
+                                                        <option value="15">15 %</option>
+                                                        <option value="20">20 %</option>
+                                                        <option value="25">25 %</option>
+                                                        <option value="30">30 %</option>
+                                                        <option value="35">35 %</option>
+                                                        <option value="40">40 %</option>
+                                                        <option value="45">45 %</option>
+                                                        <option value="50">50 %</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="floating-labels col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                                                <div class="form-group m-b-40 m-t-20 has-successs has-feedback">
+                                                    <input type="text" class="form-control required_elem form-control-successs disabled-val" id="ncb" required>
+                                                    <span class="highlight"></span>
+                                                    <span class="bar"></span>
+                                                    <label for="ncb">No Claim Bonus</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="floating-labels col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <div class="form-group m-b-40 m-t-20">
+                                                    <input type="text" class="form-control required_elem form-control-successs disabled-val" id="tod" required>
+                                                    <span class="highlight"></span>
+                                                    <span class="bar"></span>
+                                                    <label for="tod">Total OD Premium</label>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="floating-labels">
+                                            <div class="row">
+                                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                    <div class="form-group m-b-40 m-t-20 has-warningss has-feedback">
+                                                        <input type="text" class="form-control required_elem form-control-warningss" id="unpa" required>
+                                                        <span class="highlight"></span>
+                                                        <span class="bar"></span>
+                                                        <label for="unpa">Unnamed Passenger PA</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                    <div class="form-group m-b-40 m-t-20 has-successs has-feedback">
+                                                        <input type="text" class="form-control required_elem form-control-successs" id="trdprty" required>
+                                                        <span class="highlight"></span>
+                                                        <span class="bar"></span>
+                                                        <label for="trdprty">Third Party</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row floating-labels">
+                                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                <div class="form-group m-b-40 m-t-20">
+                                                    <input type="text" value="150" class="form-control required_elem form-control-successs calcnp" id="legal" required>
+                                                    <span class="highlight"></span>
+                                                    <span class="bar"></span>
+                                                    <label for="legal">Legal Liability</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                <div class="form-group m-b-40 m-t-20">
+                                                    <input type="text" value="100" class="form-control required_elem form-control-successs calcnp"  id="cpa" required>
+                                                    <span class="highlight"></span>
+                                                    <span class="bar"></span>
+                                                    <label for="cpa">Compulsary Personal Accident </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="floating-labels col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                                <div class="form-group m-b-40 m-t-20">
+                                                    <input type="text" class="form-control required_elem form-control-successs calcnp disabled-val"  id="netp" required>
+                                                    <span class="highlight"></span>
+                                                    <span class="bar"></span>
+                                                    <label for="netp">NET PREMIUM</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-2 col-md-2    col-sm-12 col-xs-12">
+                                                <div class="form-group m-b-40 m-t-20">
+                                                    <input type="text" class="form-control required_elem form-control-successs calcnp"  id="gst" required disabled placeholder="GST 18 %">
+                                                </div>
+                                            </div>
+                                            <div class="floating-labels col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                <div class="form-group m-b-40 m-t-20">
+                                                    <input type="text" class="form-control required_elem form-control-successs calcnp disabled-val"  id="tcp" required>
+                                                    <span class="highlight"></span>
+                                                    <span class="bar"></span>
+                                                    <label for="tcp">Total Comprehensive Premium</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row floating-labels">
+                                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                    <div class="form-group m-b-40 m-t-20">
+                                                            <input type="number" class="form-control form-control-successs calcAddon" disabled="true" id="addonper" required>
+                                                            <span class="highlight"></span>
+                                                            <span class="bar"></span>
+                                                            <label for="addonper">Deprication Premium Addons Cover %</label>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                    <div class="form-group m-b-40 m-t-20">
+                                                        <input type="number" class="form-control form-control-successs calcAddon" disabled="true" id="rsa" required>
+                                                        <span class="highlight"></span>
+                                                        <span class="bar"></span>
+                                                        <label for="rsa">Road Side Assistance</label>
+                                                    </div>
+                                                </div>
+                                        </div>
+                                        <div class="row floating-labels">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <div class="form-group m-b-40 m-t-20">
+                                                    <input type="number" class="form-control form-control-successs disabled-val calcAddon" disabled="true" id="zerodep" required>
+                                                    <span class="highlight"></span>
+                                                    <span class="bar"></span>
+                                                    <label for="zerodep">Zero Deprication Price</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    
+                                    <div class="form-group text-center m-t-20">
+                                        <div class="col-xs-12">
+                                            <button class="btn btn-info btn-block text-uppercase waves-effect waves-light" id="policy-save" type="submit">Create Policy </button>
+                                        </div>
+                                    </div>
+                                </div>                                    
+                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- /.row -->
+                <!-- .right-sidebar -->
+                <div class="right-sidebar">
+                    <div class="slimscrollright">
+                        <div class="rpanel-title"> Service Panel
+                            <span>
+                                <i class="ti-close right-side-toggle"></i>
+                            </span>
+                        </div>
+                        <div class="r-panel-body">
+                        </div>
+                    </div>
+                </div>
+                <!-- /.right-sidebar -->
+            </div>
+            <!-- /.container-fluid -->
+            <footer class="footer text-center">2018 &copy; Infinity Cars Insurance Admin.</footer>
+        </div>
+        <!-- /#page-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+    <!-- jQuery -->
+    <script src="../plugins/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="bootstrap/dist/js/tether.min.js"></script>
+    <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Sidebar menu plugin JavaScript -->
+    <script src="../plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js"></script>
+    <!--Slimscroll JavaScript For custom scroll-->
+    <script src="js/jquery.slimscroll.js"></script>
+    <!--Wave Effects -->
+    <script src="js/waves.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="js/custom.min.js"></script>
+    <!-- <script src="node_modules/modernizr/lib/build.js"></script>
+    <!-- Month Polyfill JS-->
+    <!-- <script src="js/month-polyfill/month-polyfill.js"></script>  -->
+    <!-- Sweet-Alert  -->
+    <script src="../plugins/bower_components/sweetalert/sweetalert.min.js"></script>
+    <script src="../plugins/bower_components/sweetalert/jquery.sweet-alert.custom.js"></script>
+
+    <script src="dist/policy.js"></script>
+</body>
+
+</html>
