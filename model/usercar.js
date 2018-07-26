@@ -22,6 +22,7 @@ const schema = new mongoose.Schema({
   cc            : numberSchema,
   bodytype      : stringSchema,
   seating       : {...numberSchema,require:true},
+  poa            :{...numberSchema,require:true},
   traileridv    : {...numberSchema,require:true},
   biofuel       : {...numberSchema,require:true},
   electrical    : {...numberSchema,require:true},

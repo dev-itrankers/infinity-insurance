@@ -13,8 +13,7 @@ var numberSchema = {
 var objType = {type : mongoose.Schema.Types.ObjectId};
 
 const schema  = new mongoose.Schema({
-  _id         : objType
-  ,
+  _id         : objType,
   idv         : numberSchema,
   pre_date    : Date,
   perod       : numberSchema,

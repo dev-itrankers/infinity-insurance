@@ -96,6 +96,7 @@ router.post("/",function(req,res){
             cc            : req.body.ccno,
             bodytype      : req.body.bodytype,
             seating       : req.body.seatcap,
+            poa           : req.body.poa,
             traileridv    : req.body.tridv,
             biofuel       : req.body.biofuel,
             electrical    : req.body.elect,
