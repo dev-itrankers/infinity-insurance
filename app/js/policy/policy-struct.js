@@ -4,6 +4,8 @@ function getPolicyStruct(){
     lname       : document.querySelector("#ln-input").value,
     mbno        : document.querySelector("#mb-input").value,
     email       : document.querySelector("#email").value,
+    nom         : document.querySelector("#nom").value==""?"na":document.querySelector("#nom").value,
+    rel         : document.querySelector("#rel").value==""?"na":document.querySelector("#rel").value,
     prof        : document.querySelector("#prof").value,
     rega        : document.querySelector("#rega").value,
     lease       : document.querySelector("#lease").value,
@@ -44,10 +46,8 @@ function getPolicyStruct(){
     tcp         : document.querySelector("#tcp").value,
     addonper    : document.querySelector("#addonper").value,
     rsa         : document.querySelector("#rsa").value,
-    zerodep     : document.querySelector("#zerodep").value
+    zerodep     : document.querySelector("#depprem").checked ? document.querySelector("#zerodep").value:0
   }
   return data;
 }
-
-
 module.exports = {getPolicyStruct};

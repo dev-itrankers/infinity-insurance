@@ -6,7 +6,7 @@ function getData(){
   http.open("GET",url,true);
   var promise = new Promise((res,rej)=>{
     http.onreadystatechange = function(){
-      if(http.readyState==4 && http.status==200){
+      if(http.readyState==4 && (http.status==200 || http.status==201)){
         res(JSON.parse(http.response));
       }
       else if(http.readyState==4){

@@ -52,8 +52,7 @@ app.use(defaultRoute);
 var db = mongoose.connect(process.env.DB_CONN);
 db.catch(function(err){
   console.log(err);
-})
-mongoose.set("debug",true);
+});
 app.listen(process.env.PORT,function(){
   console.log("Server started at port -> ",process.env.PORT);
 });

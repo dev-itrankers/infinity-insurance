@@ -11,7 +11,6 @@ var docx      = require("../docxwriter");
 var mongoose  = require("mongoose");
 router.get("/",function(req,res){
 
-
 });
 
 router.get("/document/:id",function(req,res){
@@ -24,49 +23,48 @@ router.get("/document/:id",function(req,res){
     if(err) return response.send(res,500,"Internal Server Error");
     if(!prem) return response.send(res,500,"No such entry found")
     var policynum = prem._id.getTimestamp();
-    // policynum = policynum.toString();
-    // var timregex = /(?<year>\d{4})-(?<month>\d{2})-(?<date>\d{2})T(?<hour>\d{2}):(?<minute>\d{2}):(?<second>\d{2})/;
-    // var timregex = /(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})/;
-    // var policyno = "";
-    // var op = timregex.exec(policynum);
-    // console.log(op,policynum);
-    // for(var i=1;i<=6;i++){
-    //   policyno += op[i];
-    // }
     var policyno = policynum.getFullYear()+"";
+    var mobno = prem._doc.customer.mobno+"";
     policyno+= (policynum.getMonth()+1)<10 ? "0"+(policynum.getMonth()+1):(policynum.getMonth()+1);
     policyno+= policynum.getDate();
     policyno+= policynum.getHours();
     policyno+= policynum.getMinutes();
     policyno+= policynum.getSeconds();
+    policyno+= mobno.substring(mobno.length-4);
     prem._doc.policyno = policyno;
     prem._doc.pdate = ((prem.pre_date.getDate())<10 ? "0"+(prem.pre_date.getDate()):(prem.pre_date.getDate()))+"/"+((prem.pre_date.getMonth()+1)<10 ? "0"+(prem.pre_date.getMonth()+1):(prem.pre_date.getMonth()+1))+"/"+prem.pre_date.getFullYear();
     prem._doc.ptime = prem.pre_date.getHours() + ":" + prem.pre_date.getMinutes();
     prem._doc.myid = prem._doc._id ? prem._doc._id : prem._id;
     var p_end_ts = prem.pre_date.getTime();
-    p_end_ts = p_end_ts + (365*24*3600);
+    p_end_ts = p_end_ts + (364*24*3600*1000);
     var p_end_date = new Date(p_end_ts);
     prem._doc.penddate = ((p_end_date.getDate())<10 ? "0"+(p_end_date.getDate()):(p_end_date.getDate()))+"/"+((p_end_date.getMonth()+1)<10 ? "0"+(p_end_date.getMonth()+1):(p_end_date.getMonth()+1))+"/"+p_end_date.getFullYear();
-    // res.json(prem);
-    docx.createWord({...prem},res);
+    docx.createWord(prem._doc,res);
   });
 });
 
 router.post("/",function(req,res){
-
+  let fname=req.body.fname,lname=req.body.lname,pdate=new Date(req.body.pdt),sdate=pdate.getFullYear(),edate;
+  pdate = pdate.getTime();
+  pdate = pdate + (364*24*3600*1000);
+  pdate = new Date(pdate);
+  edate = pdate.getFullYear();
+  let filename = fname+" "+lname+"-"+sdate+":"+edate;
   var custData = {
     _id         : mongoose.Types.ObjectId(),
-    fname       : req.body.fname,
-    lname       : req.body.lname,
+    fname       : fname,
+    lname       : lname,
     mobno       : req.body.mbno,
     email       : req.body.email,
     profession  : req.body.prof,
+    ra          : req.body.rega,
+    lease       : req.body.lease,
+    nom         : req.body.nom,
+    rel         : req.body.rel,
     address     : req.body.addrs,
     city        : req.body.city,
     state       : req.body.state,
-    country     : req.body.country,
-    ra          : req.body.rega,
-    lease       : req.body.lease
+    country     : req.body.country
   }
   var cust = new customer(custData);
 
@@ -146,10 +144,7 @@ router.post("/",function(req,res){
                 err.err_val = "Policy";
                 return response.send(res,500,"Internal server error",err)
               }
-              
-              var full_data = {...custData,...usercarData,...prem_data};
-              res.status(201).json({msg:"Successfully Added Policy....Please check Downloads for document!",id:prem._id})
-              docx.createWord(full_data);
+              res.status(201).json({msg:"Successfully Added Policy....Please check Downloads for document!",id:prem._id,filename});
             });
           });
         });
