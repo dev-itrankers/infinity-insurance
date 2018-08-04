@@ -11,7 +11,6 @@ var docx      = require("../docxwriter");
 var mongoose  = require("mongoose");
 router.get("/",function(req,res){
 
-
 });
 
 router.get("/document/:id",function(req,res){
@@ -44,29 +43,39 @@ router.get("/document/:id",function(req,res){
     prem._doc.ptime = prem.pre_date.getHours() + ":" + prem.pre_date.getMinutes();
     prem._doc.myid = prem._doc._id ? prem._doc._id : prem._id;
     var p_end_ts = prem.pre_date.getTime();
-    p_end_ts = p_end_ts + (365*24*3600);
+    p_end_ts = p_end_ts + (364*24*3600*1000);
     var p_end_date = new Date(p_end_ts);
     prem._doc.penddate = ((p_end_date.getDate())<10 ? "0"+(p_end_date.getDate()):(p_end_date.getDate()))+"/"+((p_end_date.getMonth()+1)<10 ? "0"+(p_end_date.getMonth()+1):(p_end_date.getMonth()+1))+"/"+p_end_date.getFullYear();
-    // res.json(prem);
-    docx.createWord({...prem},res);
+    // console.log(prem);
+    // console.log("--------------------------------------------------------------------------------");
+    // console.log(prem._doc);
+    // console.log("--------------------------------------------------------------------------------");
+    docx.createWord(prem._doc,res);
   });
 });
 
 router.post("/",function(req,res){
-
+  let fname=req.body.fname,lname=req.body.lname,pdate=new Date(req.body.pdt),sdate=pdate.getFullYear(),edate;
+  pdate = pdate.getTime();
+  pdate = pdate + (364*24*3600*1000);
+  pdate = new Date(pdate);
+  edate = pdate.getFullYear();
+  let filename = fname+" "+lname+"-"+sdate+":"+edate;
   var custData = {
     _id         : mongoose.Types.ObjectId(),
-    fname       : req.body.fname,
-    lname       : req.body.lname,
+    fname       : fname,
+    lname       : lname,
     mobno       : req.body.mbno,
     email       : req.body.email,
     profession  : req.body.prof,
+    ra          : req.body.rega,
+    lease       : req.body.lease,
+    nom         : req.body.nom,
+    rel         : req.body.rel,
     address     : req.body.addrs,
     city        : req.body.city,
     state       : req.body.state,
-    country     : req.body.country,
-    ra          : req.body.rega,
-    lease       : req.body.lease
+    country     : req.body.country
   }
   var cust = new customer(custData);
 
@@ -147,9 +156,9 @@ router.post("/",function(req,res){
                 return response.send(res,500,"Internal server error",err)
               }
               
-              var full_data = {...custData,...usercarData,...prem_data};
-              res.status(201).json({msg:"Successfully Added Policy....Please check Downloads for document!",id:prem._id})
-              docx.createWord(full_data);
+              // var full_data = {...custData,...usercarData,...prem_data};
+              res.status(201).json({msg:"Successfully Added Policy....Please check Downloads for document!",id:prem._id,filename})
+              // docx.createWord(full_data);
             });
           });
         });

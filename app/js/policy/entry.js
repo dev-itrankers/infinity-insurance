@@ -9,9 +9,10 @@ let makeSelect    = document.querySelector("#make-drop");
 let modelSelect   = document.querySelector("#model-drop");
 let disabled_elem = document.querySelectorAll(".disabled-val");
 let variantSelect = document.querySelector("#variant-drop");
+let numinp        = document.querySelectorAll("input[type='number']");
 modelSelect.disabled = true;
 variantSelect.disabled = true;
-// for selected make,model and variant;
+
 var make_sel,model_sel,variant_sel;
 var addons;
 addonService.default.getData().then(function(data){
@@ -25,6 +26,11 @@ addonService.default.getData().then(function(data){
   });
   document.querySelector("#addon_list").innerHTML += list;
 });
+
+let now = new Date();
+var stringNow = now.getFullYear()+"-"+(now.getMonth()>10?now.getMonth():"0"+now.getMonth())+"-"
++(now.getDate()>10?now.getDate():"0"+now.getDate())+"T00:00:00";
+document.querySelector("#pdt").value = stringNow;
 
 service.default.getData().then(function(data){
   data.forEach(car => {
@@ -43,10 +49,23 @@ service.default.getData().then(function(data){
   window.swal("warning","Something went wrong\nPlease reload page!!","warning")
 });
 
+  function preventENum(e){
+    let key = event.which ? event.which : event.keyCode;
+    if(key==69 || key==101) e.preventDefault();
+  }
+
+  numinp.forEach(function(elem){
+    elem.addEventListener("keyup",preventENum);
+    elem.addEventListener("keydown",preventENum);
+    elem.addEventListener("keypress",preventENum);
+  });
+
   function disableElems(event){
     let key = event.which ? event.which : event.keyCode;
-    var validAscii = [9,37,38,39,40];
-    if(!validAscii.find(x => x==key)) event.preventDefault();
+    var lft_rgt_tab_ascii = [9,37,39];
+    if(!lft_rgt_tab_ascii.find(x => x==key)) {
+      event.preventDefault();
+    }
   }
 
   disabled_elem.forEach(function(elem){
@@ -92,7 +111,17 @@ service.default.getData().then(function(data){
       variant_sel = undefined;
     }
   });
-  
+
+  function preventDef(e){
+    e.preventDefault();
+  }
+  document.querySelectorAll(".calcAddon").forEach(elem => {
+    elem.style.backgroundColor = "#eee";
+    elem.addEventListener("keypress",disableElems);
+    elem.addEventListener("keyup",disableElems);
+    elem.addEventListener("keydown",disableElems);
+    elem.addEventListener("mousewheel",preventDef);
+  });
   normal.addEventListener("change",function(e){
     var checked = this.querySelector("#depprem").checked;
     if(checked){
@@ -101,9 +130,17 @@ service.default.getData().then(function(data){
           elem.disabled = false;
         }
       });
+      document.querySelectorAll(".addon").forEach(elem => elem.value="");
+      document.querySelector("#zerodep").value="";
       document.querySelectorAll(".calcAddon").forEach(elem => {
-        elem.disabled = false;
-      })
+        elem.style.backgroundColor = "#fff";
+        elem.removeEventListener("keypress",disableElems);
+        elem.removeEventListener("keyup",disableElems);
+        elem.removeEventListener("keydown",disableElems);
+        elem.removeEventListener("mousewheel",preventDef);
+        elem.value="";
+      });
+
     }else{
       document.querySelectorAll("#addon_list li input").forEach(function(elem,index){
         if(index){
@@ -112,11 +149,15 @@ service.default.getData().then(function(data){
         }
       })
       document.querySelectorAll(".calcAddon").forEach(elem => {
-        elem.disabled=true;
-        elem.value="";
+        elem.style.backgroundColor = "#eee";
+        elem.addEventListener("keypress",disableElems);
+        elem.addEventListener("keyup",disableElems);
+        elem.addEventListener("keydown",disableElems);
+        elem.addEventListener("mousewheel",preventDef);
       });
 
     }
+    getAddons();
   });
   document.querySelector("#idv").addEventListener("focusout",function(e){
     calcOd();
@@ -218,11 +259,18 @@ service.default.getData().then(function(data){
     data.variant  = variant_sel;
     data.addon    = addon_sel;
     data          = JSON.stringify(data);
-    console.log(data);
     service.default.sendJsonData("/policy","post",data).then(function(data){
       swal("Success","Policy Successfully Added", "success");
-      var win = window.open("http://localhost:4000/policy/document/"+(data.id), '_blank');
-      win.focus();
+      var anchor = document.querySelector("#dwnld");
+      data = data.trim();
+      data = JSON.parse(data);
+      anchor.href = window.location.href.split("create-policy")[0] + "policy/document/"+(data.id);
+      anchor.download = data.filename;
+      anchor.click();
+      // var win = window.open("http://localhost:4000/policy/document/"+(data.id), '_blank');
+      // setTimeout(function(){
+      //   if(win.focus) win.focus()
+      // },500);
     }).catch(function(err){
       swal("Cancelled", "Something Went wrong...Please try again", "error");
     });

@@ -8,6 +8,9 @@ const defaultRoute = require("./routes/default");
 const passport     = require("passport");
 const helper       = require("./method/helper")
 
+
+let dbcon = false;
+
 app.disable("x-powered-by");
 app.use(express.static(path.join(__dirname,"app")));
 app.use("/docs",express.static(path.join(__dirname,"docs")));
@@ -47,13 +50,34 @@ app.use(helper);
 // app.use(passport.deserializeUser(function(user,done){
 //   done(null,user);
 // }));
+app.use(function(req,res,next){
+  if(!dbcon){
+    req.dbcon = false;
+  }
+  else{
+    req.dbcon = true;
+  }
+  next();
+})
 app.use(defaultRoute);
 
-var db = mongoose.connect(process.env.DB_CONN);
+var db = mongoose.connect(process.env.DB_CONN,function(err){
+  if(err) console.log("yeah");
+});
 db.catch(function(err){
-  console.log(err);
+  console.log("Error ",err);
 })
 mongoose.set("debug",true);
 app.listen(process.env.PORT,function(){
-  console.log("Server started at port -> ",process.env.PORT);
+  console.log("Server started at port -> ",process.env.PORT); 
+});
+
+mongoose.connection.on('connected', function(){
+  dbcon = true;
+});
+mongoose.connection.on('error', function(){
+  console.log("error");
+});
+mongoose.connection.on('disconnected', function(){
+  console.log("disconnected");
 });

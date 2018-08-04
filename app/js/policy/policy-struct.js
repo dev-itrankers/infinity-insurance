@@ -4,6 +4,8 @@ function getPolicyStruct(){
     lname       : document.querySelector("#ln-input").value,
     mbno        : document.querySelector("#mb-input").value,
     email       : document.querySelector("#email").value,
+    nom         : document.querySelector("#nom").value==""?"na":document.querySelector("#nom").value,
+    rel         : document.querySelector("#rel").value==""?"na":document.querySelector("#rel").value,
     prof        : document.querySelector("#prof").value,
     rega        : document.querySelector("#rega").value,
     lease       : document.querySelector("#lease").value,
@@ -48,6 +50,4 @@ function getPolicyStruct(){
   }
   return data;
 }
-
-
 module.exports = {getPolicyStruct};

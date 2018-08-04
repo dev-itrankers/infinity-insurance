@@ -9,6 +9,12 @@ router.get("/",function(req,res){
   var filter=req.query.name ? {make:req.query.name}:{}; 
   // var limit   = req.query.limit ? req.query.limit : 10;
   // var offset  = req.query.offset ? req.query.offset : 0;
+  if(mongoose.connection.readyState==2){
+    return res.status(503).json({"message":"Service currently unavailable, The page will refresh in 5 seconds"});
+  }
+  else if((mongoose.connection.readyState==0) || (mongoose.connection.readyState==3)){
+    return res.status(504).json({"message":"Service terminated, Restart server or contact system administrator"});
+  }
   carModel.find(filter).populate({"path":"model",populate:{path:"variant"}}).exec(function(err,cars){
     return res.status(200).json(cars)
   });
