@@ -65,14 +65,8 @@ var db = mongoose.connect(process.env.DB_CONN,function(err){
   if(err) console.log("yeah");
 });
 db.catch(function(err){
-<<<<<<< HEAD
-  console.log("Error ",err);
-})
-mongoose.set("debug",true);
-=======
   console.log(err);
 });
->>>>>>> fc6d906571fa48853ad68a600b2e6e0a0af856f1
 app.listen(process.env.PORT,function(){
   console.log("Server started at port -> ",process.env.PORT); 
 });
