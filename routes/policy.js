@@ -23,21 +23,14 @@ router.get("/document/:id",function(req,res){
     if(err) return response.send(res,500,"Internal Server Error");
     if(!prem) return response.send(res,500,"No such entry found")
     var policynum = prem._id.getTimestamp();
-    // policynum = policynum.toString();
-    // var timregex = /(?<year>\d{4})-(?<month>\d{2})-(?<date>\d{2})T(?<hour>\d{2}):(?<minute>\d{2}):(?<second>\d{2})/;
-    // var timregex = /(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})/;
-    // var policyno = "";
-    // var op = timregex.exec(policynum);
-    // console.log(op,policynum);
-    // for(var i=1;i<=6;i++){
-    //   policyno += op[i];
-    // }
     var policyno = policynum.getFullYear()+"";
+    var mobno = prem._doc.customer.mobno+"";
     policyno+= (policynum.getMonth()+1)<10 ? "0"+(policynum.getMonth()+1):(policynum.getMonth()+1);
     policyno+= policynum.getDate();
     policyno+= policynum.getHours();
     policyno+= policynum.getMinutes();
     policyno+= policynum.getSeconds();
+    policyno+= mobno.substring(mobno.length-4);
     prem._doc.policyno = policyno;
     prem._doc.pdate = ((prem.pre_date.getDate())<10 ? "0"+(prem.pre_date.getDate()):(prem.pre_date.getDate()))+"/"+((prem.pre_date.getMonth()+1)<10 ? "0"+(prem.pre_date.getMonth()+1):(prem.pre_date.getMonth()+1))+"/"+prem.pre_date.getFullYear();
     prem._doc.ptime = prem.pre_date.getHours() + ":" + prem.pre_date.getMinutes();
@@ -46,10 +39,6 @@ router.get("/document/:id",function(req,res){
     p_end_ts = p_end_ts + (364*24*3600*1000);
     var p_end_date = new Date(p_end_ts);
     prem._doc.penddate = ((p_end_date.getDate())<10 ? "0"+(p_end_date.getDate()):(p_end_date.getDate()))+"/"+((p_end_date.getMonth()+1)<10 ? "0"+(p_end_date.getMonth()+1):(p_end_date.getMonth()+1))+"/"+p_end_date.getFullYear();
-    // console.log(prem);
-    // console.log("--------------------------------------------------------------------------------");
-    // console.log(prem._doc);
-    // console.log("--------------------------------------------------------------------------------");
     docx.createWord(prem._doc,res);
   });
 });
@@ -155,10 +144,7 @@ router.post("/",function(req,res){
                 err.err_val = "Policy";
                 return response.send(res,500,"Internal server error",err)
               }
-              
-              // var full_data = {...custData,...usercarData,...prem_data};
-              res.status(201).json({msg:"Successfully Added Policy....Please check Downloads for document!",id:prem._id,filename})
-              // docx.createWord(full_data);
+              res.status(201).json({msg:"Successfully Added Policy....Please check Downloads for document!",id:prem._id,filename});
             });
           });
         });

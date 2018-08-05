@@ -8,7 +8,6 @@ const qrlib = require("./qrlib");
 var tempfile = require("tempfile");
 //Load the docx file as a binary
 function createWord(policy_data,res){
-  console.log(policy_data);
   var qrpath = parseInt(Math.random()*1000)+".png";
   let qrdata = 'policyno-'+policy_data.policyno+
               ";startdate-"+policy_data.pdate+";enddate-"+policy_data.penddate+";chasisno-"+policy_data.user_car.chasis
@@ -70,9 +69,12 @@ while(index < alpha.length){
   final[alpha[index] + "addonprice"] = "";
   index++;
 }
+
+final["policy_type"] = final["zerodep"] ? "ZERO DEPRICIATION PREMIUM":"COMPREHENSIVE PREMIUM";
 final["cov_driver"] = final["cover_driver"]
 final["cov_pass"] = final["cover_pass"]
 final["liab_prem"] = parseInt(final["third_party"])+parseInt(final["cov_driver"])+parseInt(final["cov_pass"])+parseInt(final["legal"])
+final["tzdp"] =parseInt(final["tcp"])+(final["zerodep"] ? parseInt(final["zerodep"]) : 0);
 doc.setData({...final,make,model,variant,image:"{%image}"});
 
 try {

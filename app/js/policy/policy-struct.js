@@ -46,7 +46,7 @@ function getPolicyStruct(){
     tcp         : document.querySelector("#tcp").value,
     addonper    : document.querySelector("#addonper").value,
     rsa         : document.querySelector("#rsa").value,
-    zerodep     : document.querySelector("#zerodep").value
+    zerodep     : document.querySelector("#depprem").checked ? document.querySelector("#zerodep").value:0
   }
   return data;
 }

@@ -28,10 +28,9 @@ addonService.default.getData().then(function(data){
 });
 
 let now = new Date();
-var stringNow = now.getFullYear()+"-"+(now.getMonth()>10?now.getMonth():"0"+now.getMonth())+"-"
-+(now.getDate()>10?now.getDate():"0"+now.getDate())+"T00:00:00";
+var stringNow = now.getFullYear()+"-"+(now.getMonth()+1>10?now.getMonth()+1:"0"+(now.getMonth()+1))+"-"
++(now.getDate()>10?now.getDate():"0"+now.getDate())+"T00:00";
 document.querySelector("#pdt").value = stringNow;
-
 service.default.getData().then(function(data){
   data.forEach(car => {
     var temp = {name:car.make};
@@ -134,10 +133,12 @@ service.default.getData().then(function(data){
       document.querySelector("#zerodep").value="";
       document.querySelectorAll(".calcAddon").forEach(elem => {
         elem.style.backgroundColor = "#fff";
-        elem.removeEventListener("keypress",disableElems);
-        elem.removeEventListener("keyup",disableElems);
-        elem.removeEventListener("keydown",disableElems);
-        elem.removeEventListener("mousewheel",preventDef);
+        if(!elem.classList.contains("zerodep")){
+          elem.removeEventListener("keypress",disableElems);
+          elem.removeEventListener("keyup",disableElems);
+          elem.removeEventListener("keydown",disableElems);
+          elem.removeEventListener("mousewheel",preventDef);
+        }
         elem.value="";
       });
 
@@ -264,7 +265,7 @@ service.default.getData().then(function(data){
       var anchor = document.querySelector("#dwnld");
       data = data.trim();
       data = JSON.parse(data);
-      anchor.href = window.location.href.split("create-policy")[0] + "policy/document/"+(data.id);
+      anchor.href = location.href.split("create-policy")[0] + "policy/document/"+(data.id);
       anchor.download = data.filename;
       anchor.click();
       // var win = window.open("http://localhost:4000/policy/document/"+(data.id), '_blank');
@@ -395,16 +396,24 @@ service.default.getData().then(function(data){
     document.querySelector("#tcp").value = tcp;
   }
 
-  var rsa,addon_sel;
+  var rsa,addon_sel,tzdp;
   function getAddons(){
     var value = parseFloat(document.querySelector("#addonper").value);
     rsa = parseInt(document.querySelector("#rsa").value);
     if(isNaN(rsa) || isNaN(value)) {
       zdp=undefined;
+      document.querySelector("#zerodep").value="";
+      document.querySelector("#tzerodep").value="";
       return 0;
     }
     if(!normal.querySelector("#depprem").checked) {
       zdp=undefined;
+      document.querySelector("#zerodep").value="";
+      document.querySelector("#tzerodep").value="";
+      return 0;
+    }
+    if(document.querySelector("#tcp").value==""){
+      document.querySelector("#tzerodep").value="";
       return 0;
     }
     var total = (value/100)*parseInt(document.querySelector("#idv").value);
@@ -418,7 +427,9 @@ service.default.getData().then(function(data){
     });
     var temp_gst = (total+rsa) * (0.18);
     
-    zdp = document.querySelector("#zerodep").value = temp_gst+total+rsa;
+    zdp = document.querySelector("#zerodep").value = Math.ceil(temp_gst+total+rsa);
+    tzdp =parseInt(zdp) + parseInt(document.querySelector("#tcp").value);
+    document.querySelector("#tzerodep").value = tzdp;
     return zdp;
   }
 }, false);
