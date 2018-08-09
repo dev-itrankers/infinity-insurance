@@ -1,7 +1,0 @@
-{
-  "env":{
-    "SECRET":"SECRET HERE",
-    "PORT":4000,
-    "DB_CONN":"mongodb+srv://admin:infinity18@cluster0-1repe.mongodb.net/test"
-  }
-}
